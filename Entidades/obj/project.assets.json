@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PrograLaboII\\Soluciones\\Luciano.Vega\\Entidades\\Entidades.csproj",
+      "projectUniqueName": "D:\\PrograLaboII\\Soluciones\\Luciano.Vega\\Luciano.Vega.PrimerParcial\\Entidades\\Entidades.csproj",
       "projectName": "Entidades",
-      "projectPath": "D:\\PrograLaboII\\Soluciones\\Luciano.Vega\\Entidades\\Entidades.csproj",
+      "projectPath": "D:\\PrograLaboII\\Soluciones\\Luciano.Vega\\Luciano.Vega.PrimerParcial\\Entidades\\Entidades.csproj",
       "packagesPath": "C:\\Users\\bubu0\\.nuget\\packages\\",
-      "outputPath": "D:\\PrograLaboII\\Soluciones\\Luciano.Vega\\Entidades\\obj\\",
+      "outputPath": "D:\\PrograLaboII\\Soluciones\\Luciano.Vega\\Luciano.Vega.PrimerParcial\\Entidades\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 namespace Entidades
 {
     internal class Futbol : Equipo
-    {
-        private EDeporte deporte;
-        private List<Jugador> jugadores;
+    { 
+        private List<Jugador> amonestados;
 
-        public override EDeporte Deporte { get => deporte;}
+        
         public override List<Jugador> Jugadores { get => Jugadores;}
+        public override List<Jugador> Titulares { get => titulares; }
+        public override List<Jugador> Suplentes { get => suplentes; }
+        public List<Jugador> Amonestados { get => amonestados; }
 
         private void Formacion(int titulares) 
         {
@@ -20,7 +22,18 @@ namespace Entidades
             this.titulares = this.jugadores.OrderBy(x => random.Next()).Take(titulares).ToList();
             this.suplentes = this.jugadores.Except(this.titulares).ToList();
         }
-        
+
+        private void ComprobarAmonestados() 
+        {
+            foreach (Jugador jugador in jugadores) 
+            {
+                if (jugador.Amonestado == true) 
+                {
+                    this.amonestados.Add(jugador);
+                }
+            }
+        }
+
         public override string PresentarFormacion() 
         {
             this.Formacion(this.cantTitulares);

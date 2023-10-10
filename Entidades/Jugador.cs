@@ -10,11 +10,13 @@ namespace Entidades
     {
         private string nombre;
         private string apellido;
+        private EGenero genero;
         private int dni;
         private int edad;
         private EDivisiones division;
         private double altura;
         private EDeporte deporte;
+        private bool amonestado;
 
         public Jugador(string nombre, string apellido, int edad, EDeporte deporte)
         {
@@ -24,7 +26,7 @@ namespace Entidades
             this.deporte = deporte;
         }
 
-        public Jugador(string nombre, string apellido,int edad, double altura, int dni, EDivisiones division) 
+        public Jugador(string nombre, string apellido,int edad, double altura, int dni, EDivisiones division, EGenero genero) 
         {
             this.nombre = nombre;
             this.edad = edad;
@@ -34,7 +36,7 @@ namespace Entidades
             this.division = division;
         }
 
-        public Jugador(string nombre, string apellido, int edad, double altura, int dni, EDivisiones division, EDeporte deporte) : this(nombre, apellido, edad, altura, dni, division)
+        public Jugador(string nombre, string apellido, int edad, double altura, int dni, EDivisiones division, EGenero genero, EDeporte deporte) : this(nombre, apellido, edad, altura, dni, division, genero)
         {
             this.deporte = deporte;
         }
@@ -106,14 +108,10 @@ namespace Entidades
             }
         }
 
-        public EDeporte Deporte
-        {
-            get => deporte;
-            set
-            {
-                deporte = value;
-            }
-        }
+        public EDeporte Deporte { get => deporte; set => deporte = value;  }
+        public bool Amonestado { get => amonestado; set => amonestado = value; }
+        public EGenero Genero { get => genero; set => genero = value; }
+
         #endregion
 
         public static bool operator ==(Jugador jugador1, Jugador jugador2) 
@@ -129,7 +127,7 @@ namespace Entidades
         {
             bool retorno = false;
 
-            if (obj is Jugador)
+            if (obj is Jugador && obj != null)
                 retorno = this == (Jugador)obj;
 
             return retorno;
