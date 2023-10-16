@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "4wQ/IYIKXWOFnJ49kSlF/ubn40hjWHvyMIHmK9YGU1rlXkVtrwq03E3BffojFKYNO18DRBv0t/y2Ivm0fpa8aQ==",
+  "success": true,
+  "projectFilePath": "D:\\PrograLaboII\\Soluciones\\Luciano.Vega\\Luciano.Vega.PrimerParcial\\Tools\\Tools.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bubu0\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

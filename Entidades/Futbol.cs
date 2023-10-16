@@ -9,12 +9,41 @@ namespace Entidades
     internal class Futbol : Equipo
     { 
         private List<Jugador> amonestados;
+        private int cantDelanteros;
+        private int cantDefensas;
+        private int cantMedioCampistas;
+        private int cantArqueros;
 
-        
+        public Futbol(int cantJugadores, string nombre, int cantTitulares, int cantSuplentes) : base(cantJugadores, nombre, cantTitulares, cantSuplentes)
+        {
+            this.amonestados = new List<Jugador>();
+        }
+
+        public Futbol(int cantDelanteros, int cantDefensas, int cantMedioCampistas, int cantArqueros, int cantJugadores, string nombre, int cantTitulares, int cantSuplentes) : this(cantJugadores, nombre, cantTitulares, cantSuplentes)
+        {
+            this.cantDelanteros = cantDelanteros;
+            this.cantDefensas = cantDefensas;
+            this.cantMedioCampistas = cantMedioCampistas;
+            this.cantArqueros = cantArqueros;
+        }
+        public Futbol(int cantDelanteros, int cantDefensas, int cantMedioCampistas, int cantArqueros, int cantJugadores, string nombre, int cantTitulares, int cantSuplentes, EDivisiones division, EDeporte deporte, string entrenador) : base(cantJugadores, nombre, cantTitulares, cantSuplentes, division, deporte, entrenador)
+        {
+            this.amonestados = new List<Jugador>();
+            this.cantDelanteros = cantDelanteros;
+            this.cantDefensas = cantDefensas;
+            this.cantMedioCampistas = cantMedioCampistas;
+            this.cantArqueros = cantArqueros;
+        }
+
+
         public override List<Jugador> Jugadores { get => Jugadores;}
         public override List<Jugador> Titulares { get => titulares; }
         public override List<Jugador> Suplentes { get => suplentes; }
         public List<Jugador> Amonestados { get => amonestados; }
+        public int CantDelanteros { get => cantDelanteros; }
+        public int CantDefensas { get => cantDefensas; }
+        public int CantMedioCampistas { get => cantMedioCampistas; }
+        public int CantArqueros { get => cantArqueros; }
 
         private void Formacion(int titulares) 
         {

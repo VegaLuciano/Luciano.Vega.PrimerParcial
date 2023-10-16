@@ -1,0 +1,30 @@
+[
+  {
+    "Id": "1",
+    "Nombre": "Luciano",
+    "Apellido": "Vega",
+    "Mail": "lucianovega@parcial.com",
+    "Contraseña": "Password_1"
+  },
+  {
+    "Id": "2",
+    "Nombre": "Maximiliano",
+    "Apellido": "Neiner",
+    "Mail": "maxineiner@parcial.com",
+    "Contraseña": "Password_1"
+  },
+  {
+    "Id": "3",
+    "Nombre": "Facundo",
+    "Apellido": "Rocha",
+    "Mail": "facurocha@parcial.com",
+    "Contraseña": "Password_1"
+  },
+  {
+    "Id": "4",
+    "Nombre": "Peter",
+    "Apellido": "Parker",
+    "Mail": "spiderman@parcial.com",
+    "Contraseña": "Password_1"
+  }
+]
