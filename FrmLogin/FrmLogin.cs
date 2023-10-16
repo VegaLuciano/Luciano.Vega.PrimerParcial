@@ -29,7 +29,7 @@ namespace FrmLogin
         /// </summary>
         public void CargarUsuarios()
         {
-            List<Usuario>? listAux = Json.LeerArchivo<Usuario>(this.pathUsuariosRegistrados);
+            List<Usuario>? listAux = Archivo.LeerArchivoJson<Usuario>(this.pathUsuariosRegistrados);
             if (listAux != null)
             {
                 this.usuariosRegistrados = listAux;

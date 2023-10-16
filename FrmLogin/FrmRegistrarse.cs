@@ -24,7 +24,7 @@ namespace Forms
         private void btnContinuar_Click(object sender, EventArgs e)
         {
             bool allOk = true;
-            if (!ValidarAtributos(this.txtNombre.Text, 1))
+            if (!Validaciones.ValidarAtributos(this.txtNombre.Text, 1))
             {
                 this.lblErrorNombre.Text = "Error, nombre invalido";
                 allOk = false;
@@ -32,7 +32,7 @@ namespace Forms
             else    
                 this.lblErrorNombre.Text = string.Empty;
             
-            if (!ValidarAtributos(this.txtApellido.Text, 1))
+            if (!Validaciones.ValidarAtributos(this.txtApellido.Text, 1))
             {
                 this.lblErrorApellido.Text = "Error, apellido invalido";
                 allOk = false;
@@ -40,7 +40,7 @@ namespace Forms
             else
                 this.lblErrorApellido.Text = string.Empty;
 
-            if (!ValidarAtributos(this.txtMail.Text, 2))
+            if (!Validaciones.ValidarAtributos(this.txtMail.Text, 2))
             {
                 this.lblErrorEmail.Text = "Error, mail invalido";
                 allOk = false;
@@ -100,29 +100,6 @@ namespace Forms
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-        }
-
-        private bool ValidarAtributos(string campo, int caso)
-        {
-            bool retorno = true;
-
-            if (caso == 1)
-            {
-                if (!Validaciones.ValidarCampo(campo))
-                {
-                    retorno = false;
-                }
-            }
-            else
-            {
-                if (!Validaciones.ValidarCampo(campo, '@'))
-                {
-                    retorno = false;
-                }
-            }
-
-            return retorno;
-
         }
     }
 }

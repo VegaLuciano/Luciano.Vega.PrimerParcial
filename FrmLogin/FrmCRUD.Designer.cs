@@ -30,7 +30,7 @@
         {
             txtNombre = new TextBox();
             lblNombre = new Label();
-            lblNombreError = new Label();
+            lblErrorNombre = new Label();
             label1 = new Label();
             cmbDeporte = new ComboBox();
             lblDivision = new Label();
@@ -43,12 +43,18 @@
             lblCantJugadores = new Label();
             lblCantTitulares = new Label();
             npdCantTitulares = new NumericUpDown();
-            cpdCantSuplentes = new NumericUpDown();
+            npdCantSuplentes = new NumericUpDown();
             lblCanSuplentes = new Label();
             btnCargarPlanilla = new Button();
+            lblErrorCargarPlanilla = new Label();
+            lblErrorCantidades = new Label();
+            btnContinuar = new Button();
+            btnCancelar = new Button();
+            backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            lblErrorCmb = new Label();
             ((System.ComponentModel.ISupportInitialize)npdCantJugadores).BeginInit();
             ((System.ComponentModel.ISupportInitialize)npdCantTitulares).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cpdCantSuplentes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)npdCantSuplentes).BeginInit();
             SuspendLayout();
             // 
             // txtNombre
@@ -69,16 +75,16 @@
             lblNombre.TabIndex = 1;
             lblNombre.Text = "Nombre";
             // 
-            // lblNombreError
+            // lblErrorNombre
             // 
-            lblNombreError.AutoSize = true;
-            lblNombreError.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            lblNombreError.ForeColor = Color.Red;
-            lblNombreError.Location = new Point(56, 91);
-            lblNombreError.Name = "lblNombreError";
-            lblNombreError.Size = new Size(62, 15);
-            lblNombreError.TabIndex = 2;
-            lblNombreError.Text = "lblNombre";
+            lblErrorNombre.AutoSize = true;
+            lblErrorNombre.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            lblErrorNombre.ForeColor = Color.Red;
+            lblErrorNombre.Location = new Point(56, 91);
+            lblErrorNombre.Name = "lblErrorNombre";
+            lblErrorNombre.Size = new Size(86, 15);
+            lblErrorNombre.TabIndex = 2;
+            lblErrorNombre.Text = "lblErrorNombre";
             // 
             // label1
             // 
@@ -143,9 +149,9 @@
             lblErrorNombreEntrenador.ForeColor = Color.Red;
             lblErrorNombreEntrenador.Location = new Point(295, 91);
             lblErrorNombreEntrenador.Name = "lblErrorNombreEntrenador";
-            lblErrorNombreEntrenador.Size = new Size(62, 15);
+            lblErrorNombreEntrenador.Size = new Size(144, 15);
             lblErrorNombreEntrenador.TabIndex = 9;
-            lblErrorNombreEntrenador.Text = "lblNombre";
+            lblErrorNombreEntrenador.Text = "lblErrorNombreEntrenador";
             // 
             // npdCantJugadores
             // 
@@ -183,13 +189,13 @@
             npdCantTitulares.Size = new Size(68, 27);
             npdCantTitulares.TabIndex = 13;
             // 
-            // cpdCantSuplentes
+            // npdCantSuplentes
             // 
-            cpdCantSuplentes.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            cpdCantSuplentes.Location = new Point(56, 353);
-            cpdCantSuplentes.Name = "cpdCantSuplentes";
-            cpdCantSuplentes.Size = new Size(68, 27);
-            cpdCantSuplentes.TabIndex = 15;
+            npdCantSuplentes.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            npdCantSuplentes.Location = new Point(56, 353);
+            npdCantSuplentes.Name = "npdCantSuplentes";
+            npdCantSuplentes.Size = new Size(68, 27);
+            npdCantSuplentes.TabIndex = 15;
             // 
             // lblCanSuplentes
             // 
@@ -203,7 +209,7 @@
             // 
             // btnCargarPlanilla
             // 
-            btnCargarPlanilla.Location = new Point(307, 211);
+            btnCargarPlanilla.Location = new Point(295, 202);
             btnCargarPlanilla.Name = "btnCargarPlanilla";
             btnCargarPlanilla.Size = new Size(109, 31);
             btnCargarPlanilla.TabIndex = 16;
@@ -211,13 +217,71 @@
             btnCargarPlanilla.UseVisualStyleBackColor = true;
             btnCargarPlanilla.Click += btnCargarPlanilla_Click;
             // 
+            // lblErrorCargarPlanilla
+            // 
+            lblErrorCargarPlanilla.AutoSize = true;
+            lblErrorCargarPlanilla.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            lblErrorCargarPlanilla.ForeColor = Color.Red;
+            lblErrorCargarPlanilla.Location = new Point(295, 237);
+            lblErrorCargarPlanilla.Name = "lblErrorCargarPlanilla";
+            lblErrorCargarPlanilla.Size = new Size(121, 15);
+            lblErrorCargarPlanilla.TabIndex = 17;
+            lblErrorCargarPlanilla.Text = "lblErrorCargarPlanilla";
+            // 
+            // lblErrorCantidades
+            // 
+            lblErrorCantidades.AutoSize = true;
+            lblErrorCantidades.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            lblErrorCantidades.ForeColor = Color.Red;
+            lblErrorCantidades.Location = new Point(56, 383);
+            lblErrorCantidades.Name = "lblErrorCantidades";
+            lblErrorCantidades.Size = new Size(105, 15);
+            lblErrorCantidades.TabIndex = 18;
+            lblErrorCantidades.Text = "lblErrorCantidades";
+            // 
+            // btnContinuar
+            // 
+            btnContinuar.Location = new Point(517, 367);
+            btnContinuar.Name = "btnContinuar";
+            btnContinuar.Size = new Size(109, 31);
+            btnContinuar.TabIndex = 19;
+            btnContinuar.Text = "Continuar";
+            btnContinuar.UseVisualStyleBackColor = true;
+            btnContinuar.Click += btnContinuar_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(295, 367);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(109, 31);
+            btnCancelar.TabIndex = 20;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // lblErrorCmb
+            // 
+            lblErrorCmb.AutoSize = true;
+            lblErrorCmb.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            lblErrorCmb.ForeColor = Color.Red;
+            lblErrorCmb.Location = new Point(480, 161);
+            lblErrorCmb.Name = "lblErrorCmb";
+            lblErrorCmb.Size = new Size(69, 15);
+            lblErrorCmb.TabIndex = 21;
+            lblErrorCmb.Text = "lblErrorCmb";
+            // 
             // FrmCRUD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(670, 415);
+            Controls.Add(lblErrorCmb);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnContinuar);
+            Controls.Add(lblErrorCantidades);
+            Controls.Add(lblErrorCargarPlanilla);
             Controls.Add(btnCargarPlanilla);
-            Controls.Add(cpdCantSuplentes);
+            Controls.Add(npdCantSuplentes);
             Controls.Add(lblCanSuplentes);
             Controls.Add(npdCantTitulares);
             Controls.Add(lblCantTitulares);
@@ -230,7 +294,7 @@
             Controls.Add(lblDivision);
             Controls.Add(cmbDeporte);
             Controls.Add(label1);
-            Controls.Add(lblNombreError);
+            Controls.Add(lblErrorNombre);
             Controls.Add(lblNombre);
             Controls.Add(txtNombre);
             Name = "FrmCRUD";
@@ -238,7 +302,7 @@
             Load += FrmCRUD_Load;
             ((System.ComponentModel.ISupportInitialize)npdCantJugadores).EndInit();
             ((System.ComponentModel.ISupportInitialize)npdCantTitulares).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cpdCantSuplentes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)npdCantSuplentes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -247,7 +311,7 @@
 
         private TextBox txtNombre;
         private Label lblNombre;
-        private Label lblNombreError;
+        private Label lblErrorNombre;
         private Label label1;
         private ComboBox cmbDeporte;
         private Label lblDivision;
@@ -260,8 +324,14 @@
         private Label lblCantJugadores;
         private Label lblCantTitulares;
         private NumericUpDown npdCantTitulares;
-        private NumericUpDown cpdCantSuplentes;
+        private NumericUpDown npdCantSuplentes;
         private Label lblCanSuplentes;
         private Button btnCargarPlanilla;
+        private Label lblErrorCargarPlanilla;
+        private Label lblErrorCantidades;
+        private Button btnContinuar;
+        private Button btnCancelar;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private Label lblErrorCmb;
     }
 }

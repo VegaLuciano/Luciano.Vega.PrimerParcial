@@ -15,15 +15,24 @@ namespace Entidades
         protected List<Jugador> suplentes;
         protected List<Jugador> titulares;
 
-        public Equipo(int cantJugadores, string nombre, int cantTitulares, int cantSuplentes)
+        public Equipo()
+        {
+            this.deporte = new EDeporte();
+            this.nombre = "None";
+            this.division = new EDivisiones();
+            this.entrenador = "None";
+            this.jugadores = new List<Jugador>();
+            this.suplentes = new List<Jugador>();
+            this.titulares = new List<Jugador>();
+        }
+
+        public Equipo(int cantJugadores, string nombre, int cantTitulares, int cantSuplentes) :  this()
         {
             this.cantJugadores = cantJugadores;
             this.nombre = nombre;
             this.cantTitulares = cantTitulares;
             this.cantSuplentes = cantSuplentes;
-            this.suplentes  = new List<Jugador>();
-            this.suplentes = new List<Jugador>();
-            this.titulares = new List<Jugador>();
+           
         }
 
         public Equipo(int cantJugadores, string nombre, int cantTitulares, int cantSuplentes, EDivisiones division) : this(cantJugadores, nombre, cantTitulares, cantSuplentes)
