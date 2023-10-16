@@ -109,5 +109,19 @@ namespace Entidades
 
             return index;
         }
+        public static bool CampoRepetido(string usuario, List<Usuario> lista)
+        {
+            bool retorno = false;
+            foreach (Usuario user in lista)
+            {
+                if (user.mail == usuario)
+                {
+                    retorno = true;
+                    break;
+                }
+            }
+
+            return retorno;
+        }
     }
 }

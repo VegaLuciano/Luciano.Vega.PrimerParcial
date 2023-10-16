@@ -1,5 +1,6 @@
 using Tools;
 using Entidades;
+using Forms;
 
 namespace FrmLogin
 {
@@ -56,7 +57,8 @@ namespace FrmLogin
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
-
+            FrmRegistrarse frmRegistrarse = new FrmRegistrarse(this.usuariosRegistrados);
+            frmRegistrarse.ShowDialog();    
         }
     }
 }

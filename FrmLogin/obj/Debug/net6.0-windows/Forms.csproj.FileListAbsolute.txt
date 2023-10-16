@@ -21,3 +21,4 @@ D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\
 D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.pdb
 D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.genruntimeconfig.cache
 D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\ref\Forms.dll
+D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.FrmRegistrarse.resources
