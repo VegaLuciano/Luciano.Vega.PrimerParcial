@@ -42,7 +42,7 @@
             txtMail.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             txtMail.Location = new Point(108, 100);
             txtMail.Name = "txtMail";
-            txtMail.Size = new Size(156, 27);
+            txtMail.Size = new Size(186, 27);
             txtMail.TabIndex = 0;
             // 
             // txtContraseña
@@ -50,7 +50,7 @@
             txtContraseña.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             txtContraseña.Location = new Point(108, 167);
             txtContraseña.Name = "txtContraseña";
-            txtContraseña.Size = new Size(156, 27);
+            txtContraseña.Size = new Size(186, 27);
             txtContraseña.TabIndex = 1;
             // 
             // lblUsername
@@ -108,7 +108,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(355, 388);
+            ClientSize = new Size(383, 388);
             Controls.Add(btnRegistrarse);
             Controls.Add(btnIngresar);
             Controls.Add(lblError);

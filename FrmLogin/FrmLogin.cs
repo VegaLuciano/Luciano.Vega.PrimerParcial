@@ -20,6 +20,7 @@ namespace FrmLogin
         {
             this.lblError.Text = string.Empty;
             this.CargarUsuarios();
+            
         }
 
 
@@ -32,6 +33,7 @@ namespace FrmLogin
             if (listAux != null)
             {
                 this.usuariosRegistrados = listAux;
+                MessageBox.Show("Se cargo la wea");
             }
             else
             {
@@ -48,6 +50,9 @@ namespace FrmLogin
             if (indexUser != -1)
             {
                 this.usuario = this.usuariosRegistrados[indexUser];
+                FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal(this.usuariosRegistrados, this.usuario);
+                frmMenuPrincipal.Show();
+                //this.Close();
             }
             else
             {
@@ -58,7 +63,7 @@ namespace FrmLogin
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
             FrmRegistrarse frmRegistrarse = new FrmRegistrarse(this.usuariosRegistrados);
-            frmRegistrarse.ShowDialog();    
+            frmRegistrarse.ShowDialog();
         }
     }
 }
