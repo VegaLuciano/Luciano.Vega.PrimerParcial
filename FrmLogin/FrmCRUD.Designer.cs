@@ -31,8 +31,6 @@
             txtNombre = new TextBox();
             lblNombre = new Label();
             lblErrorNombre = new Label();
-            label1 = new Label();
-            cmbDeporte = new ComboBox();
             lblDivision = new Label();
             cmbDivision = new ComboBox();
             label2 = new Label();
@@ -86,30 +84,11 @@
             lblErrorNombre.TabIndex = 2;
             lblErrorNombre.Text = "lblErrorNombre";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(56, 131);
-            label1.Name = "label1";
-            label1.Size = new Size(64, 20);
-            label1.TabIndex = 3;
-            label1.Text = "Deporte";
-            // 
-            // cmbDeporte
-            // 
-            cmbDeporte.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbDeporte.FormattingEnabled = true;
-            cmbDeporte.Location = new Point(56, 154);
-            cmbDeporte.Name = "cmbDeporte";
-            cmbDeporte.Size = new Size(121, 28);
-            cmbDeporte.TabIndex = 4;
-            // 
             // lblDivision
             // 
             lblDivision.AutoSize = true;
             lblDivision.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDivision.Location = new Point(295, 131);
+            lblDivision.Location = new Point(56, 126);
             lblDivision.Name = "lblDivision";
             lblDivision.Size = new Size(62, 20);
             lblDivision.TabIndex = 5;
@@ -119,7 +98,7 @@
             // 
             cmbDivision.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             cmbDivision.FormattingEnabled = true;
-            cmbDivision.Location = new Point(295, 154);
+            cmbDivision.Location = new Point(56, 149);
             cmbDivision.Name = "cmbDivision";
             cmbDivision.Size = new Size(121, 28);
             cmbDivision.TabIndex = 6;
@@ -209,7 +188,7 @@
             // 
             // btnCargarPlanilla
             // 
-            btnCargarPlanilla.Location = new Point(295, 202);
+            btnCargarPlanilla.Location = new Point(295, 128);
             btnCargarPlanilla.Name = "btnCargarPlanilla";
             btnCargarPlanilla.Size = new Size(109, 31);
             btnCargarPlanilla.TabIndex = 16;
@@ -222,7 +201,7 @@
             lblErrorCargarPlanilla.AutoSize = true;
             lblErrorCargarPlanilla.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
             lblErrorCargarPlanilla.ForeColor = Color.Red;
-            lblErrorCargarPlanilla.Location = new Point(295, 237);
+            lblErrorCargarPlanilla.Location = new Point(295, 162);
             lblErrorCargarPlanilla.Name = "lblErrorCargarPlanilla";
             lblErrorCargarPlanilla.Size = new Size(121, 15);
             lblErrorCargarPlanilla.TabIndex = 17;
@@ -264,7 +243,7 @@
             lblErrorCmb.AutoSize = true;
             lblErrorCmb.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
             lblErrorCmb.ForeColor = Color.Red;
-            lblErrorCmb.Location = new Point(480, 161);
+            lblErrorCmb.Location = new Point(56, 180);
             lblErrorCmb.Name = "lblErrorCmb";
             lblErrorCmb.Size = new Size(69, 15);
             lblErrorCmb.TabIndex = 21;
@@ -292,8 +271,6 @@
             Controls.Add(label2);
             Controls.Add(cmbDivision);
             Controls.Add(lblDivision);
-            Controls.Add(cmbDeporte);
-            Controls.Add(label1);
             Controls.Add(lblErrorNombre);
             Controls.Add(lblNombre);
             Controls.Add(txtNombre);
@@ -312,8 +289,6 @@
         private TextBox txtNombre;
         private Label lblNombre;
         private Label lblErrorNombre;
-        private Label label1;
-        private ComboBox cmbDeporte;
         private Label lblDivision;
         private ComboBox cmbDivision;
         private Label label2;

@@ -1,49 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Futbol : Equipo
+    public class Futbol : Equipo
     { 
         private List<Jugador> amonestados;
-        private int cantDelanteros;
-        private int cantDefensas;
-        private int cantMedioCampistas;
-        private int cantArqueros;
+        private Color colorCamisetaLocal;
+        private Color colorCamisetaVisitante;
 
-        public Futbol(int cantJugadores, string nombre, int cantTitulares, int cantSuplentes) : base(cantJugadores, nombre, cantTitulares, cantSuplentes)
+        public Futbol() : base() 
         {
             this.amonestados = new List<Jugador>();
+            this.deporte = EDeporte.FUTBOL;
         }
 
-        public Futbol(int cantDelanteros, int cantDefensas, int cantMedioCampistas, int cantArqueros, int cantJugadores, string nombre, int cantTitulares, int cantSuplentes) : this(cantJugadores, nombre, cantTitulares, cantSuplentes)
-        {
-            this.cantDelanteros = cantDelanteros;
-            this.cantDefensas = cantDefensas;
-            this.cantMedioCampistas = cantMedioCampistas;
-            this.cantArqueros = cantArqueros;
-        }
-        public Futbol(int cantDelanteros, int cantDefensas, int cantMedioCampistas, int cantArqueros, int cantJugadores, string nombre, int cantTitulares, int cantSuplentes, EDivisiones division, EDeporte deporte, string entrenador) : base(cantJugadores, nombre, cantTitulares, cantSuplentes, division, deporte, entrenador)
+        public Futbol(string nombre, int cantTitulares, EDivisiones division, string entrenador) : base( nombre, cantTitulares, division)
         {
             this.amonestados = new List<Jugador>();
-            this.cantDelanteros = cantDelanteros;
-            this.cantDefensas = cantDefensas;
-            this.cantMedioCampistas = cantMedioCampistas;
-            this.cantArqueros = cantArqueros;
+            this.deporte = EDeporte.FUTBOL;
+            this.entrenador = entrenador;
         }
 
+        public Futbol(string nombre, int cantTitulares, EDivisiones division, string entrenador, Color camisetaLocal, Color camisteVisitante) : this(nombre, cantTitulares, division, entrenador)
+        {
+            this.colorCamisetaLocal = camisetaLocal;
+            this.colorCamisetaVisitante = camisteVisitante;
+        }
+        public Futbol(string nombre, int cantTitulares, EDivisiones division, string entrenador, Color camisetaLocal, Color camisteVisitante, EDeporte deporte, int cantSuplentes) : this(nombre, cantTitulares, division, entrenador, camisetaLocal, camisteVisitante)
+        {
+            this.deporte = deporte;
+            this.cantSuplentes = cantSuplentes;
+        }
 
         public override List<Jugador> Jugadores { get => Jugadores;}
         public override List<Jugador> Titulares { get => titulares; }
         public override List<Jugador> Suplentes { get => suplentes; }
         public List<Jugador> Amonestados { get => amonestados; }
-        public int CantDelanteros { get => cantDelanteros; }
-        public int CantDefensas { get => cantDefensas; }
-        public int CantMedioCampistas { get => cantMedioCampistas; }
-        public int CantArqueros { get => cantArqueros; }
+
+        public Color ColorCamiseteLocal { get => colorCamisetaLocal; set => colorCamisetaLocal = value; }
+        public Color ColorCamisetaVisitante { get => colorCamisetaVisitante; set => colorCamisetaVisitante = value; }
+
 
         private void Formacion(int titulares) 
         {

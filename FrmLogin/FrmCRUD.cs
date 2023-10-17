@@ -18,8 +18,14 @@ namespace Forms
     public partial class FrmCRUD : Form
     {
         public List<Equipo> listaEquipos;
-        public Usuario usuario;
+        public Usuario? usuario;
         public List<Jugador>? listJugadores;
+        public FrmCRUD()
+        {
+            //this.listaEquipos = new List<Equipo>();
+            //this.listJugadores = new List<Jugador>();
+        }
+
         public FrmCRUD(List<Equipo> listaEquipos, Usuario usuario)
         {
             InitializeComponent();
@@ -30,8 +36,7 @@ namespace Forms
 
         private void FrmCRUD_Load(object sender, EventArgs e)
         {
-            this.cmbDeporte.Items.AddRange(Enum.GetNames(typeof(EDeporte)));
-            this.cmbDivision.Items.AddRange(Enum.GetNames(typeof(EDivisiones)));
+                this.cmbDivision.Items.AddRange(Enum.GetNames(typeof(EDivisiones)));
             this.lblErrorNombreEntrenador.Text = string.Empty;
             this.lblErrorNombre.Text = string.Empty;
             this.lblErrorCargarPlanilla.Text = string.Empty;
@@ -128,6 +133,11 @@ namespace Forms
 
         private void btnContinuar_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        public bool FuncionContinuar()
+        {
             bool allOk = true;
             if (!Validaciones.ValidarAtributos(this.txtNombre.Text, 1))
             {
@@ -153,12 +163,12 @@ namespace Forms
             else
                 this.lblErrorNombre.Text = string.Empty;
 
-            if (!(this.cmbDeporte.SelectedItem == null))
+            if (!(this.cmbDivision.SelectedItem != null))
             {
                 this.lblErrorCmb.Text = "Error, complete los campos";
                 allOk = false;
             }
-            else 
+            else
                 this.lblErrorCmb.Text = string.Empty;
 
             if (!(this.listJugadores != null))
@@ -169,11 +179,7 @@ namespace Forms
             else
                 this.lblErrorCargarPlanilla.Text = string.Empty;
 
-            if (allOk)
-            {
-                DialogResult = DialogResult.OK;
-            }
-
+            return allOk;
         }
     }
 

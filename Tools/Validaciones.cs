@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Tools
@@ -66,6 +67,13 @@ namespace Tools
 
             return retorno;
            
+        }
+        public static bool EsFormtatoAlturaValido(string input)
+        {
+
+            string patron = @"^\d+,\d$";
+
+            return Regex.IsMatch(input, patron);
         }
 
         private static bool ValidarString(string cadena) 

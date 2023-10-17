@@ -18,6 +18,19 @@ namespace Entidades
         private EDeporte deporte;
         private bool amonestado;
 
+        public Jugador() 
+        {
+            this.nombre = "None";
+            this.apellido= "None";
+            this.genero = EGenero.MASCULINO; 
+            this.dni = 0;
+            this.division= EDivisiones.MAYORES;
+            this.edad = 0;
+            this.deporte = EDeporte.FUTBOL;
+            this.altura = 0;
+            this.Amonestado = false ;
+        }
+
         public Jugador(string nombre, string apellido, int edad, EDeporte deporte)
         {
             this.nombre = nombre;

@@ -5,7 +5,6 @@ namespace Entidades
     public abstract class Equipo
     {
         protected EDeporte deporte;
-        protected int cantJugadores;
         protected string nombre;
         protected int cantTitulares;
         protected int cantSuplentes;
@@ -26,31 +25,28 @@ namespace Entidades
             this.titulares = new List<Jugador>();
         }
 
-        public Equipo(int cantJugadores, string nombre, int cantTitulares, int cantSuplentes) :  this()
+        public Equipo( string nombre, int cantTitulares) :  this()
         {
-            this.cantJugadores = cantJugadores;
             this.nombre = nombre;
-            this.cantTitulares = cantTitulares;
-            this.cantSuplentes = cantSuplentes;
-           
+            this.cantTitulares = cantTitulares;          
         }
 
-        public Equipo(int cantJugadores, string nombre, int cantTitulares, int cantSuplentes, EDivisiones division) : this(cantJugadores, nombre, cantTitulares, cantSuplentes)
+        public Equipo( string nombre, int cantTitulares, EDivisiones division) : this(nombre, cantTitulares)
         {
             this.division = division;
         }
 
-        public Equipo(int cantJugadores, string nombre,  int cantTitulares, int cantSuplentes, EDivisiones division, EDeporte deporte, string entrenador) : this(cantJugadores, nombre, cantTitulares, cantSuplentes, division)
+        public Equipo( string nombre,  int cantTitulares, EDivisiones division, EDeporte deporte, string entrenador, int cantSuplentes) : this( nombre, cantTitulares, division)
         {
-            this.deporte = deporte;
             this.entrenador = entrenador;
+            this.deporte = deporte;
+            this.cantSuplentes = cantSuplentes;
         }
 
         public abstract List<Jugador> Jugadores { get; }
         public abstract List<Jugador> Suplentes { get; }
         public abstract List<Jugador> Titulares { get; }
-        public EDeporte Deporte { get => deporte; set => deporte = value; }
-        protected int CantJugadores { get => cantJugadores; set => cantJugadores = value; }
+        public EDeporte Deporte { get => deporte; }
         protected string Nombre { get => nombre; set => nombre = value; }
         protected int CantTitulares { get => cantTitulares; set => cantTitulares = value; }
         protected int CantSuplentes { get => cantSuplentes; set => cantSuplentes = value; }
@@ -64,6 +60,7 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Nombre: {this.nombre} ");
             sb.AppendLine($"Deporte: {this.deporte}");
+            sb.AppendLine($"Entrenador: {this.entrenador }");
             sb.AppendLine($"Jugadores: {this.cantJugadores}");
             sb.AppendLine($"Suplentes: {this.cantSuplentes}");
             sb.AppendLine($"Titulares: {this.cantTitulares}");
