@@ -1,4 +1,4 @@
-using Tools;
+Ôªøusing Tools;
 using Entidades;
 using Forms;
 
@@ -20,7 +20,7 @@ namespace FrmLogin
         {
             this.lblError.Text = string.Empty;
             this.CargarUsuarios();
-            
+
         }
 
 
@@ -38,13 +38,13 @@ namespace FrmLogin
             else
             {
                 MessageBox.Show("Error al Leer los usuarios", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                this.lblError.Text = "No podr· iniciar seciÛn";
+                this.lblError.Text = "No podr√° iniciar seci√≥n";
             }
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            Usuario usuarioAux = new Usuario(this.txtMail.Text, this.txtContraseÒa.Text);
+            Usuario usuarioAux = new Usuario(this.txtMail.Text, this.txtContrase√±a.Text);
 
             int indexUser = Usuario.FindUser(usuarioAux, this.usuariosRegistrados);
             if (indexUser != -1)
@@ -52,11 +52,11 @@ namespace FrmLogin
                 this.usuario = this.usuariosRegistrados[indexUser];
                 FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal(this.usuariosRegistrados, this.usuario);
                 frmMenuPrincipal.Show();
-                //this.Close();
+                this.Visible = false;
             }
             else
             {
-                this.lblError.Text = "Error, contraseÒa o mail incorrectos";
+                this.lblError.Text = "Error, contrase√±a o mail incorrectos";
             }
         }
 

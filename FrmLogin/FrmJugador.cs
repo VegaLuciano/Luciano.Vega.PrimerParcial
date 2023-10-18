@@ -12,7 +12,7 @@ using Tools;
 
 namespace Forms
 {
-    public partial class FrmJugador : Form
+    public partial class FrmJugador: Form
     {
         public Jugador Jugador;
         public Equipo equipo;
@@ -113,21 +113,21 @@ namespace Forms
             }
         }
 
-        public void SetearCamposModificar() 
+        public void SetearCamposModificar()
         {
             if (this.seModifica)
-            { 
+            {
                 this.npdDni.Enabled = false;
                 this.cmbDeporte.Enabled = false;
             }
         }
 
-        private void SetearCampoDeporte() 
+        private void SetearCampoDeporte()
         {
             switch (this.equipo.Deporte)
             {
                 case EDeporte.Futbol:
-                    this.cmbDeporte.SelectedItem = this.cmbDeporte.Items[0]; 
+                    this.cmbDeporte.SelectedItem = this.cmbDeporte.Items[0];
                     break;
                 case EDeporte.Basquet:
                     this.cmbDeporte.SelectedItem = this.cmbDeporte.Items[1];
@@ -137,6 +137,6 @@ namespace Forms
                     break;
             }
         }
-       
+
     }
 }

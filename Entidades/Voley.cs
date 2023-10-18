@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Voley : Equipo
+    public class Voley : Equipo
     {
         private ECancha cancha;
         private string? sedeDelEquipo;
@@ -34,15 +34,23 @@ namespace Entidades
             this.cantSuplentes = cantSuplentes;
         }
 
-        public override List<Jugador> Jugadores { get => jugadores; }
+        public override List<Jugador> Jugadores { get => jugadores; set => jugadores = value; }
         public ECancha Cancha { get => cancha; set => cancha = value; }
-        public string SedeDelEquipo { get => sedeDelEquipo; set => sedeDelEquipo = value; }
+        public string? SedeDelEquipo { get => sedeDelEquipo; set => sedeDelEquipo = value; }
 
         private void Formacion(int titulares)
         {
             Random random = new Random();
             //this.titulares = this.jugadores.OrderBy(x => random.Next()).Take(titulares).ToList();
            // this.suplentes = this.jugadores.Except(this.titulares).ToList();
+        }
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(base.ToString());
+            sb.AppendLine($"Cancha {this.cancha.ToString()}");
+            sb.AppendLine($"Sede {this.sedeDelEquipo}");
+            return sb.ToString();
         }
 
         public override string PresentarFormacion()

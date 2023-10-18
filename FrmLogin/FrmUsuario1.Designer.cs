@@ -1,6 +1,6 @@
 ﻿namespace Forms
 {
-    partial class FrmUsuario
+    partial class FrmUsuario1
     {
         /// <summary>
         /// Required designer variable.
@@ -36,8 +36,8 @@
             lblUsApellido = new Label();
             lblUsMail = new Label();
             lblUsContraseña = new Label();
-            rdbContraseña = new RadioButton();
             btnVolver = new Button();
+            chbVer = new CheckBox();
             SuspendLayout();
             // 
             // lblNombre
@@ -120,18 +120,6 @@
             lblUsContraseña.TabIndex = 7;
             lblUsContraseña.Text = "ContraseñaUsuario";
             // 
-            // rdbContraseña
-            // 
-            rdbContraseña.AutoSize = true;
-            rdbContraseña.Location = new Point(199, 205);
-            rdbContraseña.Name = "rdbContraseña";
-            rdbContraseña.Size = new Size(41, 19);
-            rdbContraseña.TabIndex = 8;
-            rdbContraseña.TabStop = true;
-            rdbContraseña.Text = "Ver";
-            rdbContraseña.UseVisualStyleBackColor = true;
-            rdbContraseña.CheckedChanged += rdbContraseña_CheckedChanged;
-            // 
             // btnVolver
             // 
             btnVolver.Location = new Point(81, 248);
@@ -142,13 +130,24 @@
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
+            // chbVer
+            // 
+            chbVer.AutoSize = true;
+            chbVer.Location = new Point(197, 206);
+            chbVer.Name = "chbVer";
+            chbVer.Size = new Size(42, 19);
+            chbVer.TabIndex = 10;
+            chbVer.Text = "Ver";
+            chbVer.UseVisualStyleBackColor = true;
+            chbVer.CheckedChanged += chbVer_CheckedChanged;
+            // 
             // FrmUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(294, 305);
+            Controls.Add(chbVer);
             Controls.Add(btnVolver);
-            Controls.Add(rdbContraseña);
             Controls.Add(lblUsContraseña);
             Controls.Add(lblUsMail);
             Controls.Add(lblUsApellido);
@@ -174,7 +173,7 @@
         private Label lblUsApellido;
         private Label lblUsMail;
         private Label lblUsContraseña;
-        private RadioButton rdbContraseña;
         private Button btnVolver;
+        private CheckBox chbVer;
     }
 }

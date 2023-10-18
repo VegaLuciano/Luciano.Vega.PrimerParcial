@@ -40,7 +40,7 @@
             // txtMail
             // 
             txtMail.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMail.Location = new Point(108, 100);
+            txtMail.Location = new Point(82, 97);
             txtMail.Name = "txtMail";
             txtMail.Size = new Size(186, 27);
             txtMail.TabIndex = 0;
@@ -48,7 +48,7 @@
             // txtContraseña
             // 
             txtContraseña.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            txtContraseña.Location = new Point(108, 167);
+            txtContraseña.Location = new Point(82, 164);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(186, 27);
             txtContraseña.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblUsername.Location = new Point(108, 77);
+            lblUsername.Location = new Point(82, 74);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(46, 20);
             lblUsername.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             lblMail.AutoSize = true;
             lblMail.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMail.Location = new Point(108, 144);
+            lblMail.Location = new Point(82, 141);
             lblMail.Name = "lblMail";
             lblMail.Size = new Size(83, 20);
             lblMail.TabIndex = 3;
@@ -78,7 +78,7 @@
             lblError.AutoSize = true;
             lblError.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
             lblError.ForeColor = Color.Red;
-            lblError.Location = new Point(108, 197);
+            lblError.Location = new Point(82, 194);
             lblError.Name = "lblError";
             lblError.Size = new Size(31, 15);
             lblError.TabIndex = 4;
@@ -86,7 +86,10 @@
             // 
             // btnIngresar
             // 
-            btnIngresar.Location = new Point(134, 234);
+            btnIngresar.FlatAppearance.BorderColor = Color.Silver;
+            btnIngresar.FlatAppearance.BorderSize = 2;
+            btnIngresar.FlatStyle = FlatStyle.Flat;
+            btnIngresar.Location = new Point(124, 231);
             btnIngresar.Name = "btnIngresar";
             btnIngresar.Size = new Size(90, 33);
             btnIngresar.TabIndex = 6;
@@ -96,7 +99,9 @@
             // 
             // btnRegistrarse
             // 
-            btnRegistrarse.Location = new Point(134, 289);
+            btnRegistrarse.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+            btnRegistrarse.FlatStyle = FlatStyle.Flat;
+            btnRegistrarse.Location = new Point(124, 286);
             btnRegistrarse.Name = "btnRegistrarse";
             btnRegistrarse.Size = new Size(90, 33);
             btnRegistrarse.TabIndex = 7;
@@ -108,7 +113,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(383, 388);
+            BackColor = Color.SteelBlue;
+            ClientSize = new Size(360, 388);
             Controls.Add(btnRegistrarse);
             Controls.Add(btnIngresar);
             Controls.Add(lblError);
@@ -116,8 +122,11 @@
             Controls.Add(lblUsername);
             Controls.Add(txtContraseña);
             Controls.Add(txtMail);
+            ForeColor = SystemColors.AppWorkspace;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FrmLogin";
-            Text = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Login";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Forms
 {
-    public partial class FrmUsuario : Form
+    public partial class FrmUsuario1 : Form
     {
         Usuario usuario;
         string contraseñaOculta;
-        public FrmUsuario(Usuario usuario)
+        public FrmUsuario1(Usuario usuario)
         {
             InitializeComponent();
             this.usuario = usuario;
@@ -30,17 +30,21 @@ namespace Forms
             this.lblUsContraseña.Text = this.contraseñaOculta;
         }
 
-        private void rdbContraseña_CheckedChanged(object sender, EventArgs e)
-        {
-            if (this.rdbContraseña.Checked)
-                this.lblUsContraseña.Text = this.usuario.Contraseña;
-            else
-                this.lblUsContraseña.Text = this.contraseñaOculta;
-        }
-
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void chbVer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chbVer.Checked)
+            {
+                this.lblUsContraseña.Text = this.usuario.Contraseña;
+            }
+            else
+            {
+                this.lblUsContraseña.Text = this.contraseñaOculta;
+            }
         }
     }
 }

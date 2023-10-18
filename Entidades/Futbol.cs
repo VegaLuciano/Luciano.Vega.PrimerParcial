@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,7 +35,7 @@ namespace Entidades
             this.cantSuplentes = cantSuplentes;
         }
 
-        public override List<Jugador> Jugadores { get => Jugadores;}
+        public override List<Jugador> Jugadores { get => jugadores; set => jugadores = value; }
         public Color ColorCamiseteLocal { get => colorCamisetaLocal; set => colorCamisetaLocal = value; }
         public Color ColorCamisetaVisitante { get => colorCamisetaVisitante; set => colorCamisetaVisitante = value; }
 
@@ -44,6 +45,15 @@ namespace Entidades
             Random random = new Random();
             //this.titulares = this.jugadores.OrderBy(x => random.Next()).Take(titulares).ToList();
             //this.suplentes = this.jugadores.Except(this.titulares).ToList();
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(base.ToString());
+            sb.AppendLine($"Color Local {this.colorCamisetaLocal.Name}");
+            sb.AppendLine($"Color Visitante {this.colorCamisetaVisitante.Name}");
+            return sb.ToString();
         }
 
         public override string PresentarFormacion() 

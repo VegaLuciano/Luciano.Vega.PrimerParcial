@@ -25,7 +25,7 @@ namespace Entidades
         public Equipo( string nombre, int cantTitulares) :  this()
         {
             this.nombre = nombre;
-            this.cantTitulares = cantTitulares;          
+            this.cantTitulares = cantTitulares;             
         }
 
         public Equipo( string nombre, int cantTitulares, EDivisiones division) : this(nombre, cantTitulares)
@@ -40,7 +40,7 @@ namespace Entidades
             this.cantSuplentes = cantSuplentes;
         }
 
-        public abstract List<Jugador> Jugadores { get; }
+        public abstract List<Jugador> Jugadores { get; set;}
         public EDeporte Deporte { get => deporte; }
         protected string Nombre { get => nombre; set => nombre = value; }
         protected int CantTitulares { get => cantTitulares; set => cantTitulares = value; }
@@ -56,10 +56,42 @@ namespace Entidades
             sb.AppendLine($"Nombre: {this.nombre} ");
             sb.AppendLine($"Deporte: {this.deporte}");
             sb.AppendLine($"Entrenador: {this.entrenador}");
+            sb.AppendLine($"Division: {this.division.ToString()}");
             sb.AppendLine($"Jugadores: {this.jugadores.Count}");
             sb.AppendLine($"Suplentes: {this.cantSuplentes}");
             sb.AppendLine($"Titulares: {this.cantTitulares}");
             return sb.ToString();
+        }
+
+        public static void ElegirTitulares(List<Jugador> lista, int cantidadTitulares)
+        {
+            Random random = new Random();
+            if (lista != null)
+            {
+                List<int> indicesACambiar = Enumerable.Range(0, lista.Count).ToList();
+                indicesACambiar = indicesACambiar.OrderBy(x => random.Next()).Take(cantidadTitulares).ToList();
+
+                // Cambiar los elementos correspondientes a true
+                foreach (int indice in indicesACambiar)
+                {
+                    lista[indice].EsTitular = true;
+                }
+            }
+
+        }
+        public static int ContarTitulares(List<Jugador> lista)
+        {
+            int contador = 0;
+
+            foreach (Jugador item in lista)
+            {
+                if (item.EsTitular == true)
+                {
+                    contador++;
+                }
+            }
+
+            return contador;
         }
 
         public override string ToString()

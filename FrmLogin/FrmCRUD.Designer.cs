@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             txtNombre = new TextBox();
             lblNombre = new Label();
@@ -36,7 +36,6 @@
             label2 = new Label();
             txtNombreEntrenador = new TextBox();
             lblErrorNombreEntrenador = new Label();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             npdCantJugadores = new NumericUpDown();
             lblCantJugadores = new Label();
             lblCantTitulares = new Label();
@@ -48,7 +47,6 @@
             lblErrorCantidades = new Label();
             btnContinuar = new Button();
             btnCancelar = new Button();
-            backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             lblErrorCmb = new Label();
             ((System.ComponentModel.ISupportInitialize)npdCantJugadores).BeginInit();
             ((System.ComponentModel.ISupportInitialize)npdCantTitulares).BeginInit();
@@ -57,140 +55,142 @@
             // 
             // txtNombre
             // 
-            txtNombre.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNombre.Location = new Point(56, 61);
+            txtNombre.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNombre.Location = new Point(56, 38);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(170, 27);
+            txtNombre.Size = new Size(170, 21);
             txtNombre.TabIndex = 0;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNombre.Location = new Point(56, 38);
+            lblNombre.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNombre.Location = new Point(56, 15);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(64, 20);
+            lblNombre.Size = new Size(52, 15);
             lblNombre.TabIndex = 1;
             lblNombre.Text = "Nombre";
             // 
             // lblErrorNombre
             // 
             lblErrorNombre.AutoSize = true;
-            lblErrorNombre.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            lblErrorNombre.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorNombre.ForeColor = Color.Red;
-            lblErrorNombre.Location = new Point(56, 91);
+            lblErrorNombre.Location = new Point(56, 62);
             lblErrorNombre.Name = "lblErrorNombre";
-            lblErrorNombre.Size = new Size(86, 15);
+            lblErrorNombre.Size = new Size(76, 13);
             lblErrorNombre.TabIndex = 2;
             lblErrorNombre.Text = "lblErrorNombre";
             // 
             // lblDivision
             // 
             lblDivision.AutoSize = true;
-            lblDivision.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDivision.Location = new Point(56, 126);
+            lblDivision.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDivision.Location = new Point(257, 223);
             lblDivision.Name = "lblDivision";
-            lblDivision.Size = new Size(62, 20);
+            lblDivision.Size = new Size(50, 15);
             lblDivision.TabIndex = 5;
             lblDivision.Text = "Division";
             // 
             // cmbDivision
             // 
-            cmbDivision.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbDivision.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cmbDivision.FormattingEnabled = true;
-            cmbDivision.Location = new Point(56, 149);
+            cmbDivision.Items.AddRange(new object[] { "Sub16", "Sub18", "Sub21", "Mayores" });
+            cmbDivision.Location = new Point(257, 241);
             cmbDivision.Name = "cmbDivision";
-            cmbDivision.Size = new Size(121, 28);
+            cmbDivision.Size = new Size(121, 23);
             cmbDivision.TabIndex = 6;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(295, 38);
+            label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(56, 92);
             label2.Name = "label2";
-            label2.Size = new Size(166, 20);
+            label2.Size = new Size(135, 15);
             label2.TabIndex = 7;
             label2.Text = "Nombre del entrenador";
             // 
             // txtNombreEntrenador
             // 
-            txtNombreEntrenador.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNombreEntrenador.Location = new Point(295, 61);
+            txtNombreEntrenador.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNombreEntrenador.Location = new Point(56, 110);
             txtNombreEntrenador.Name = "txtNombreEntrenador";
-            txtNombreEntrenador.Size = new Size(170, 27);
+            txtNombreEntrenador.Size = new Size(170, 21);
             txtNombreEntrenador.TabIndex = 8;
             // 
             // lblErrorNombreEntrenador
             // 
             lblErrorNombreEntrenador.AutoSize = true;
-            lblErrorNombreEntrenador.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            lblErrorNombreEntrenador.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorNombreEntrenador.ForeColor = Color.Red;
-            lblErrorNombreEntrenador.Location = new Point(295, 91);
+            lblErrorNombreEntrenador.Location = new Point(56, 134);
             lblErrorNombreEntrenador.Name = "lblErrorNombreEntrenador";
-            lblErrorNombreEntrenador.Size = new Size(144, 15);
+            lblErrorNombreEntrenador.Size = new Size(128, 13);
             lblErrorNombreEntrenador.TabIndex = 9;
             lblErrorNombreEntrenador.Text = "lblErrorNombreEntrenador";
             // 
             // npdCantJugadores
             // 
-            npdCantJugadores.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            npdCantJugadores.Location = new Point(56, 225);
+            npdCantJugadores.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            npdCantJugadores.Location = new Point(56, 190);
             npdCantJugadores.Name = "npdCantJugadores";
-            npdCantJugadores.Size = new Size(68, 27);
+            npdCantJugadores.Size = new Size(68, 21);
             npdCantJugadores.TabIndex = 10;
             // 
             // lblCantJugadores
             // 
             lblCantJugadores.AutoSize = true;
-            lblCantJugadores.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCantJugadores.Location = new Point(56, 202);
+            lblCantJugadores.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCantJugadores.Location = new Point(56, 167);
             lblCantJugadores.Name = "lblCantJugadores";
-            lblCantJugadores.Size = new Size(160, 20);
+            lblCantJugadores.Size = new Size(131, 15);
             lblCantJugadores.TabIndex = 11;
             lblCantJugadores.Text = "Cantidad de jugadores";
             // 
             // lblCantTitulares
             // 
             lblCantTitulares.AutoSize = true;
-            lblCantTitulares.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCantTitulares.Location = new Point(56, 264);
+            lblCantTitulares.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCantTitulares.Location = new Point(56, 219);
             lblCantTitulares.Name = "lblCantTitulares";
-            lblCantTitulares.Size = new Size(147, 20);
+            lblCantTitulares.Size = new Size(119, 15);
             lblCantTitulares.TabIndex = 12;
             lblCantTitulares.Text = "Cantidad de titulares";
             // 
             // npdCantTitulares
             // 
-            npdCantTitulares.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            npdCantTitulares.Location = new Point(56, 287);
+            npdCantTitulares.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            npdCantTitulares.Location = new Point(56, 242);
             npdCantTitulares.Name = "npdCantTitulares";
-            npdCantTitulares.Size = new Size(68, 27);
+            npdCantTitulares.Size = new Size(68, 21);
             npdCantTitulares.TabIndex = 13;
             // 
             // npdCantSuplentes
             // 
-            npdCantSuplentes.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            npdCantSuplentes.Location = new Point(56, 353);
+            npdCantSuplentes.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            npdCantSuplentes.Location = new Point(56, 295);
             npdCantSuplentes.Name = "npdCantSuplentes";
-            npdCantSuplentes.Size = new Size(68, 27);
+            npdCantSuplentes.Size = new Size(68, 21);
             npdCantSuplentes.TabIndex = 15;
             // 
             // lblCanSuplentes
             // 
             lblCanSuplentes.AutoSize = true;
-            lblCanSuplentes.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCanSuplentes.Location = new Point(56, 330);
+            lblCanSuplentes.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCanSuplentes.Location = new Point(56, 272);
             lblCanSuplentes.Name = "lblCanSuplentes";
-            lblCanSuplentes.Size = new Size(156, 20);
+            lblCanSuplentes.Size = new Size(129, 15);
             lblCanSuplentes.TabIndex = 14;
             lblCanSuplentes.Text = "Cantidad de suplentes";
             // 
             // btnCargarPlanilla
             // 
-            btnCargarPlanilla.Location = new Point(295, 128);
+            btnCargarPlanilla.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCargarPlanilla.Location = new Point(491, 235);
             btnCargarPlanilla.Name = "btnCargarPlanilla";
-            btnCargarPlanilla.Size = new Size(109, 31);
+            btnCargarPlanilla.Size = new Size(103, 33);
             btnCargarPlanilla.TabIndex = 16;
             btnCargarPlanilla.Text = "Cargar planilla";
             btnCargarPlanilla.UseVisualStyleBackColor = true;
@@ -199,28 +199,29 @@
             // lblErrorCargarPlanilla
             // 
             lblErrorCargarPlanilla.AutoSize = true;
-            lblErrorCargarPlanilla.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            lblErrorCargarPlanilla.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorCargarPlanilla.ForeColor = Color.Red;
-            lblErrorCargarPlanilla.Location = new Point(295, 162);
+            lblErrorCargarPlanilla.Location = new Point(491, 271);
             lblErrorCargarPlanilla.Name = "lblErrorCargarPlanilla";
-            lblErrorCargarPlanilla.Size = new Size(121, 15);
+            lblErrorCargarPlanilla.Size = new Size(103, 13);
             lblErrorCargarPlanilla.TabIndex = 17;
             lblErrorCargarPlanilla.Text = "lblErrorCargarPlanilla";
             // 
             // lblErrorCantidades
             // 
             lblErrorCantidades.AutoSize = true;
-            lblErrorCantidades.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            lblErrorCantidades.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorCantidades.ForeColor = Color.Red;
-            lblErrorCantidades.Location = new Point(56, 383);
+            lblErrorCantidades.Location = new Point(56, 319);
             lblErrorCantidades.Name = "lblErrorCantidades";
-            lblErrorCantidades.Size = new Size(105, 15);
+            lblErrorCantidades.Size = new Size(92, 13);
             lblErrorCantidades.TabIndex = 18;
             lblErrorCantidades.Text = "lblErrorCantidades";
             // 
             // btnContinuar
             // 
-            btnContinuar.Location = new Point(517, 367);
+            btnContinuar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnContinuar.Location = new Point(485, 300);
             btnContinuar.Name = "btnContinuar";
             btnContinuar.Size = new Size(109, 31);
             btnContinuar.TabIndex = 19;
@@ -230,9 +231,10 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(295, 367);
+            btnCancelar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancelar.Location = new Point(257, 295);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(109, 31);
+            btnCancelar.Size = new Size(106, 31);
             btnCancelar.TabIndex = 20;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -241,11 +243,11 @@
             // lblErrorCmb
             // 
             lblErrorCmb.AutoSize = true;
-            lblErrorCmb.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            lblErrorCmb.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorCmb.ForeColor = Color.Red;
-            lblErrorCmb.Location = new Point(56, 180);
+            lblErrorCmb.Location = new Point(257, 267);
             lblErrorCmb.Name = "lblErrorCmb";
-            lblErrorCmb.Size = new Size(69, 15);
+            lblErrorCmb.Size = new Size(60, 13);
             lblErrorCmb.TabIndex = 21;
             lblErrorCmb.Text = "lblErrorCmb";
             // 
@@ -253,7 +255,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(670, 415);
+            ClientSize = new Size(677, 343);
             Controls.Add(lblErrorCmb);
             Controls.Add(btnCancelar);
             Controls.Add(btnContinuar);
@@ -286,27 +288,25 @@
 
         #endregion
 
-        private TextBox txtNombre;
-        private Label lblNombre;
-        private Label lblErrorNombre;
-        private Label lblDivision;
-        private ComboBox cmbDivision;
-        private Label label2;
-        private TextBox txtNombreEntrenador;
-        private Label lblErrorNombreEntrenador;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private NumericUpDown npdCantJugadores;
-        private Label lblCantJugadores;
-        private Label lblCantTitulares;
-        private NumericUpDown npdCantTitulares;
-        private NumericUpDown npdCantSuplentes;
-        private Label lblCanSuplentes;
-        private Button btnCargarPlanilla;
-        private Label lblErrorCargarPlanilla;
-        private Label lblErrorCantidades;
-        private Button btnContinuar;
-        private Button btnCancelar;
-        private System.ComponentModel.BackgroundWorker backgroundWorker2;
-        private Label lblErrorCmb;
+        protected TextBox txtNombre;
+        protected Label lblNombre;
+        protected Label lblErrorNombre;
+        protected Label lblDivision;
+        protected ComboBox cmbDivision;
+        protected Label label2;
+        protected TextBox txtNombreEntrenador;
+        protected Label lblErrorNombreEntrenador;
+        protected NumericUpDown npdCantJugadores;
+        protected Label lblCantJugadores;
+        protected Label lblCantTitulares;
+        protected NumericUpDown npdCantTitulares;
+        protected NumericUpDown npdCantSuplentes;
+        protected Label lblCanSuplentes;
+        protected Button btnCargarPlanilla;
+        protected Label lblErrorCargarPlanilla;
+        protected Label lblErrorCantidades;
+        protected Button btnContinuar;
+        protected Button btnCancelar;
+        protected Label lblErrorCmb;
     }
 }

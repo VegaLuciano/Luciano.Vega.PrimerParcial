@@ -1,5 +1,4 @@
 D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.csproj.AssemblyReference.cache
-D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\FrmLogin.FrmLogin.resources
 D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.csproj.GenerateResource.cache
 D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.GeneratedMSBuildEditorConfig.editorconfig
 D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.AssemblyInfoInputs.cache
@@ -22,8 +21,13 @@ D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\
 D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.genruntimeconfig.cache
 D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\ref\Forms.dll
 D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.FrmRegistrarse.resources
+D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.FrmUsuario1.resources
+D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.Properties.Resources.resources
+D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.FrmBasquet.resources
 D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.FrmCRUD.resources
-D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.FrmMenuPrincipal.resources
+D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\FrmLogin.FrmLogin.resources
 D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.FrmFutbol.resources
 D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.FrmJugador.resources
-D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.FrmUsuario.resources
+D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.FrmMenuPrincipal.resources
+D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.FrmVoley.resources
+D:\PrograLaboII\Soluciones\Luciano.Vega\Luciano.Vega.PrimerParcial\FrmLogin\obj\Debug\net6.0-windows\Forms.FrmMostrar.resources

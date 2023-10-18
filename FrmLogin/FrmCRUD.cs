@@ -24,23 +24,21 @@ namespace Forms
         {
             this.listaEquipos = new List<Equipo>();
             this.listJugadores = new List<Jugador>();
+            InitializeComponent();
         }
 
-        public FrmCRUD(List<Equipo> listaEquipos, Usuario usuario)
+        public FrmCRUD(List<Equipo> listaEquipos, Usuario usuario) : this()
         {
-            InitializeComponent();
             this.listaEquipos = listaEquipos;
             this.usuario = usuario;
-            this.listJugadores = new List<Jugador>();
         }
 
-        private void FrmCRUD_Load(object sender, EventArgs e)
+        protected void FrmCRUD_Load(object sender, EventArgs e)
         {
-            this.cmbDivision.Items.AddRange(Enum.GetNames(typeof(EDivisiones)));
             FrmCRUD.ClearErrorLabels(this.Controls);
         }
 
-        private void btnCargarPlanilla_Click(object sender, EventArgs e)
+        protected void btnCargarPlanilla_Click(object sender, EventArgs e)
         {
             List<string> extensiones = new List<string> { "json", "xml" };
 
@@ -58,25 +56,16 @@ namespace Forms
                     this.listJugadores = Archivo.LeerArchivoXML<Jugador>(path);
                 }
 
-                if (this.listJugadores != null)
-                {
-                    this.npdCantJugadores.Value = this.listJugadores.Count;
-                    this.npdCantJugadores.Enabled = false;
-
-                    if (this.npdCantTitulares.Value > this.listJugadores.Count || this.npdCantSuplentes.Value > this.listJugadores.Count)
-                    {
-                        this.lblErrorCantidades.Text = "Error, las cantidades no coinciden";
-                    }
-                    else if (!(this.listJugadores.Count == (this.npdCantTitulares.Value + this.npdCantSuplentes.Value)))
-                    {
-                        this.lblErrorCantidades.Text = "Error, las cantidades no coinciden";
-                    }
-                }
-
+                this.npdCantJugadores.Value = this.listJugadores.Count;
+                this.npdCantJugadores.Enabled = false;
+                Equipo.ElegirTitulares(this.listJugadores, (int)this.npdCantTitulares.Value);
+                this.npdCantSuplentes.Value = this.listJugadores.Count - Equipo.ContarTitulares(this.listJugadores);
+                MessageBox.Show($"{this.npdCantSuplentes.Value} suplentes");
+                this.npdCantSuplentes.Enabled = false;
             }
         }
 
-        private static string CargarPlanilla(Label labelError, List<string> extensionesPermitidas)
+        protected static string CargarPlanilla(Label labelError, List<string> extensionesPermitidas)
         {
             string path = string.Empty;
             labelError.Text = string.Empty;
@@ -122,14 +111,32 @@ namespace Forms
             return path;
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
 
-        private void btnContinuar_Click(object sender, EventArgs e)
+        protected void btnContinuar_Click(object sender, EventArgs e)
         {
+            if (this.listJugadores != null)
+            {
+                if (this.listJugadores.Count > 0)
+                {
 
+                    if (this.npdCantTitulares.Value > this.listJugadores.Count || this.npdCantSuplentes.Value > this.listJugadores.Count)
+                    {
+                        this.lblErrorCantidades.Text = "Error, las cantidades no coinciden";
+                    }
+                    else if (!(this.listJugadores.Count == (this.npdCantTitulares.Value + this.npdCantSuplentes.Value)))
+                    {
+                        this.lblErrorCantidades.Text = "Error, las cantidades no coinciden";
+                    }
+                    else
+                    {
+                        this.lblErrorCantidades.Text = string.Empty;
+                    }
+                }
+            }
         }
 
         public bool FuncionContinuar()
@@ -149,7 +156,7 @@ namespace Forms
                 allOk = false;
             }
             else
-                this.lblErrorNombre.Text = string.Empty;
+                this.lblErrorNombreEntrenador.Text = string.Empty;
 
             if (!((this.npdCantSuplentes.Value + this.npdCantTitulares.Value) == this.npdCantJugadores.Value))
             {
@@ -157,7 +164,7 @@ namespace Forms
                 allOk = false;
             }
             else
-                this.lblErrorNombre.Text = string.Empty;
+                this.lblErrorCantidades.Text = string.Empty;
 
             if (!(this.cmbDivision.SelectedItem != null))
             {
@@ -189,6 +196,27 @@ namespace Forms
                 }
             }
         }
+        public EDivisiones SetearCampoDivision()
+        {
+            EDivisiones retorno;
+            switch (this.cmbDivision.SelectedIndex)
+            {
+                case 0:
+                    retorno = EDivisiones.Sub16;
+                    break;
+                case 1:
+                    retorno = EDivisiones.Sub18;
+                    break;
+                case 2:
+                    retorno = EDivisiones.Sub21;
+                    break;
+                default:
+                    retorno = EDivisiones.Mayores;
+                    break;
+            };
 
+            return retorno;
+        }
     }
+
 }

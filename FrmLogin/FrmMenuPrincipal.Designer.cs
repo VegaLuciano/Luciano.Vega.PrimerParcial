@@ -30,39 +30,126 @@
         {
             btnAgregar = new Button();
             lblUsuario = new Label();
+            pnlFormulario = new Panel();
+            btnBasquet = new Button();
+            btnFutbol = new Button();
+            btnVoley = new Button();
+            btnMostrar = new Button();
+            pnlFormulario.SuspendLayout();
             SuspendLayout();
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(23, 131);
+            btnAgregar.BackColor = Color.DarkSlateBlue;
+            btnAgregar.FlatAppearance.BorderColor = SystemColors.ButtonFace;
+            btnAgregar.FlatStyle = FlatStyle.Flat;
+            btnAgregar.ForeColor = SystemColors.ActiveCaptionText;
+            btnAgregar.Location = new Point(12, 82);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(125, 23);
+            btnAgregar.Size = new Size(140, 32);
             btnAgregar.TabIndex = 0;
             btnAgregar.Text = "Agregar equipo";
-            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += btnAgregar_Click;
             // 
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
-            lblUsuario.Location = new Point(23, 20);
+            lblUsuario.BackColor = Color.DarkSlateBlue;
+            lblUsuario.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lblUsuario.Location = new Point(55, 39);
             lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(47, 15);
+            lblUsuario.Size = new Size(59, 20);
             lblUsuario.TabIndex = 1;
             lblUsuario.Text = "Usuario";
             lblUsuario.Click += lblUsuario_Click_1;
+            // 
+            // pnlFormulario
+            // 
+            pnlFormulario.BackColor = Color.SteelBlue;
+            pnlFormulario.Controls.Add(btnBasquet);
+            pnlFormulario.Controls.Add(btnFutbol);
+            pnlFormulario.Controls.Add(btnVoley);
+            pnlFormulario.Location = new Point(158, 28);
+            pnlFormulario.Name = "pnlFormulario";
+            pnlFormulario.Size = new Size(693, 382);
+            pnlFormulario.TabIndex = 2;
+            pnlFormulario.Paint += panel1_Paint;
+            // 
+            // btnBasquet
+            // 
+            btnBasquet.BackColor = Color.SlateBlue;
+            btnBasquet.FlatAppearance.BorderColor = Color.DarkSlateBlue;
+            btnBasquet.FlatStyle = FlatStyle.Flat;
+            btnBasquet.ForeColor = SystemColors.ActiveCaptionText;
+            btnBasquet.Location = new Point(22, 54);
+            btnBasquet.Name = "btnBasquet";
+            btnBasquet.Size = new Size(140, 32);
+            btnBasquet.TabIndex = 5;
+            btnBasquet.Text = "Basquet";
+            btnBasquet.UseVisualStyleBackColor = false;
+            btnBasquet.Click += btnBasquet_Click;
+            // 
+            // btnFutbol
+            // 
+            btnFutbol.BackColor = Color.SlateBlue;
+            btnFutbol.FlatAppearance.BorderColor = Color.DarkSlateBlue;
+            btnFutbol.FlatStyle = FlatStyle.Flat;
+            btnFutbol.ForeColor = SystemColors.ActiveCaptionText;
+            btnFutbol.Location = new Point(22, 4);
+            btnFutbol.Name = "btnFutbol";
+            btnFutbol.Size = new Size(140, 32);
+            btnFutbol.TabIndex = 4;
+            btnFutbol.Text = "Futbol";
+            btnFutbol.UseVisualStyleBackColor = false;
+            btnFutbol.Click += btnFutbol_Click;
+            // 
+            // btnVoley
+            // 
+            btnVoley.BackColor = Color.SlateBlue;
+            btnVoley.Cursor = Cursors.No;
+            btnVoley.FlatAppearance.BorderColor = Color.DarkSlateBlue;
+            btnVoley.FlatStyle = FlatStyle.Flat;
+            btnVoley.ForeColor = SystemColors.ActiveCaptionText;
+            btnVoley.ImageAlign = ContentAlignment.BottomCenter;
+            btnVoley.Location = new Point(22, 108);
+            btnVoley.Name = "btnVoley";
+            btnVoley.Size = new Size(140, 32);
+            btnVoley.TabIndex = 3;
+            btnVoley.Text = "Voley";
+            btnVoley.TextAlign = ContentAlignment.BottomCenter;
+            btnVoley.UseVisualStyleBackColor = false;
+            btnVoley.Click += btnVoley_Click;
+            // 
+            // btnMostrar
+            // 
+            btnMostrar.BackColor = Color.DarkSlateBlue;
+            btnMostrar.FlatAppearance.BorderColor = SystemColors.ButtonFace;
+            btnMostrar.FlatStyle = FlatStyle.Flat;
+            btnMostrar.ForeColor = SystemColors.ActiveCaptionText;
+            btnMostrar.Location = new Point(12, 169);
+            btnMostrar.Name = "btnMostrar";
+            btnMostrar.Size = new Size(140, 32);
+            btnMostrar.TabIndex = 3;
+            btnMostrar.Text = "Mostrar";
+            btnMostrar.UseVisualStyleBackColor = false;
+            btnMostrar.Click += btnMostrar_Click;
             // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(685, 397);
+            BackColor = Color.DarkSlateBlue;
+            ClientSize = new Size(884, 430);
+            Controls.Add(btnMostrar);
+            Controls.Add(pnlFormulario);
             Controls.Add(lblUsuario);
             Controls.Add(btnAgregar);
             Name = "FrmMenuPrincipal";
             Text = "FrmMenuPrincipal";
             FormClosing += FrmMenuPrincipal_FormClosing;
             Load += FrmMenuPrincipal_Load;
+            pnlFormulario.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -71,5 +158,10 @@
 
         private Button btnAgregar;
         private Label lblUsuario;
+        private Panel pnlFormulario;
+        private Button btnFutbol;
+        private Button btnVoley;
+        private Button btnBasquet;
+        private Button btnMostrar;
     }
 }
