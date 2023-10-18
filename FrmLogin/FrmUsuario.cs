@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Forms
 {
-    public partial class FrmUsuario1 : Form
+    public partial class FrmUsuario : Form
     {
         Usuario usuario;
         string contraseñaOculta;
-        public FrmUsuario1(Usuario usuario)
+        public FrmUsuario(Usuario usuario)
         {
             InitializeComponent();
             this.usuario = usuario;

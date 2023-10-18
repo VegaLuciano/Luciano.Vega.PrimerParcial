@@ -12,21 +12,21 @@ using Tools;
 
 namespace Forms
 {
-    public partial class FrmJugador1 : Form
+    public partial class FrmJugador : Form
     {
         public Jugador Jugador;
         public Equipo equipo;
         private int index;
         private bool seModifica;
 
-        public FrmJugador1(Jugador jugador, Equipo equipo)
+        public FrmJugador(Jugador jugador, Equipo equipo)
         {
             this.Jugador = jugador;
             InitializeComponent();
             this.equipo = equipo;
             this.seModifica = false;
         }
-        public FrmJugador1(Jugador jugador, Equipo equipo, int index)
+        public FrmJugador(Jugador jugador, Equipo equipo, int index)
         {
             this.Jugador = jugador;
             InitializeComponent();
@@ -37,7 +37,7 @@ namespace Forms
 
         private void FrmJugador_Load(object sender, EventArgs e)
         {
-            FrmCRUD1.ClearErrorLabels(this.Controls);
+            FrmCRUD.ClearErrorLabels(this.Controls);
             this.SetearCampoDeporte();
         }
 
@@ -113,21 +113,21 @@ namespace Forms
             }
         }
 
-        public void SetearCamposModificar()
+        public void SetearCamposModificar() 
         {
             if (this.seModifica)
-            {
+            { 
                 this.npdDni.Enabled = false;
                 this.cmbDeporte.Enabled = false;
             }
         }
 
-        private void SetearCampoDeporte()
+        private void SetearCampoDeporte() 
         {
             switch (this.equipo.Deporte)
             {
                 case EDeporte.Futbol:
-                    this.cmbDeporte.SelectedItem = this.cmbDeporte.Items[0];
+                    this.cmbDeporte.SelectedItem = this.cmbDeporte.Items[0]; 
                     break;
                 case EDeporte.Basquet:
                     this.cmbDeporte.SelectedItem = this.cmbDeporte.Items[1];
@@ -137,6 +137,6 @@ namespace Forms
                     break;
             }
         }
-
+       
     }
 }

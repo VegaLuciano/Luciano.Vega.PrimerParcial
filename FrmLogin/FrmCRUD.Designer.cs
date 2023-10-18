@@ -1,6 +1,6 @@
 ﻿namespace Forms
 {
-    partial class FrmCRUD1
+    partial class FrmCRUD
     {
         /// <summary>
         /// Required designer variable.
@@ -36,6 +36,7 @@
             label2 = new Label();
             txtNombreEntrenador = new TextBox();
             lblErrorNombreEntrenador = new Label();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             npdCantJugadores = new NumericUpDown();
             lblCantJugadores = new Label();
             lblCantTitulares = new Label();
@@ -47,6 +48,7 @@
             lblErrorCantidades = new Label();
             btnContinuar = new Button();
             btnCancelar = new Button();
+            backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             lblErrorCmb = new Label();
             ((System.ComponentModel.ISupportInitialize)npdCantJugadores).BeginInit();
             ((System.ComponentModel.ISupportInitialize)npdCantTitulares).BeginInit();
@@ -218,7 +220,7 @@
             // 
             // btnContinuar
             // 
-            btnContinuar.Location = new Point(447, 353);
+            btnContinuar.Location = new Point(517, 367);
             btnContinuar.Name = "btnContinuar";
             btnContinuar.Size = new Size(109, 31);
             btnContinuar.TabIndex = 19;
@@ -228,7 +230,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(278, 353);
+            btnCancelar.Location = new Point(295, 367);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(109, 31);
             btnCancelar.TabIndex = 20;
@@ -247,11 +249,11 @@
             lblErrorCmb.TabIndex = 21;
             lblErrorCmb.Text = "lblErrorCmb";
             // 
-            // FrmCRUD1
+            // FrmCRUD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(610, 415);
+            ClientSize = new Size(670, 415);
             Controls.Add(lblErrorCmb);
             Controls.Add(btnCancelar);
             Controls.Add(btnContinuar);
@@ -272,7 +274,7 @@
             Controls.Add(lblErrorNombre);
             Controls.Add(lblNombre);
             Controls.Add(txtNombre);
-            Name = "FrmCRUD1";
+            Name = "FrmCRUD";
             Text = "FrmCRUD";
             Load += FrmCRUD_Load;
             ((System.ComponentModel.ISupportInitialize)npdCantJugadores).EndInit();
@@ -292,6 +294,7 @@
         private Label label2;
         private TextBox txtNombreEntrenador;
         private Label lblErrorNombreEntrenador;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private NumericUpDown npdCantJugadores;
         private Label lblCantJugadores;
         private Label lblCantTitulares;
@@ -303,6 +306,7 @@
         private Label lblErrorCantidades;
         private Button btnContinuar;
         private Button btnCancelar;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private Label lblErrorCmb;
     }
 }

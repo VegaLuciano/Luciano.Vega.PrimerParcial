@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Forms
 {
-    public partial class FrmMenuPrincipal1 : Form
+    public partial class FrmMenuPrincipal : Form
     {
         public List<Usuario> listaUsuarios;
         public Usuario usuario;
@@ -19,7 +19,7 @@ namespace Forms
         private DateTime fecha;
         private string pathUsuarios;
 
-        public FrmMenuPrincipal1(List<Usuario> listaUsuarios, Usuario usuario)
+        public FrmMenuPrincipal(List<Usuario> listaUsuarios, Usuario usuario)
         {
             InitializeComponent();
             this.listaUsuarios = listaUsuarios;
@@ -32,7 +32,7 @@ namespace Forms
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            FrmJugador1 frmCRUD = new FrmJugador1(this.listaEquipos[0].Jugadores[0], this.listaEquipos[0]);
+            FrmJugador frmCRUD = new FrmJugador(this.listaEquipos[0].Jugadores[0], this.listaEquipos[0]);
             frmCRUD.ShowDialog();
         }
 
@@ -57,7 +57,7 @@ namespace Forms
 
         private void lblUsuario_Click_1(object sender, EventArgs e)
         {
-            FrmUsuario1 frmUsuario = new FrmUsuario1(this.usuario);
+            FrmUsuario frmUsuario = new FrmUsuario(this.usuario);
             frmUsuario.ShowDialog();
         }
     }

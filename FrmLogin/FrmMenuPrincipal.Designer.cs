@@ -1,6 +1,6 @@
 ﻿namespace Forms
 {
-    partial class FrmMenuPrincipal1
+    partial class FrmMenuPrincipal
     {
         /// <summary>
         /// Required designer variable.

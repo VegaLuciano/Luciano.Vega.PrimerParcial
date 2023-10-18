@@ -15,18 +15,18 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Forms
 {
-    public partial class FrmCRUD1 : Form
+    public partial class FrmCRUD : Form
     {
         public List<Equipo> listaEquipos;
         public Usuario? usuario;
         public List<Jugador>? listJugadores;
-        public FrmCRUD1()
+        public FrmCRUD()
         {
             this.listaEquipos = new List<Equipo>();
             this.listJugadores = new List<Jugador>();
         }
 
-        public FrmCRUD1(List<Equipo> listaEquipos, Usuario usuario)
+        public FrmCRUD(List<Equipo> listaEquipos, Usuario usuario)
         {
             InitializeComponent();
             this.listaEquipos = listaEquipos;
@@ -37,14 +37,14 @@ namespace Forms
         private void FrmCRUD_Load(object sender, EventArgs e)
         {
             this.cmbDivision.Items.AddRange(Enum.GetNames(typeof(EDivisiones)));
-            FrmCRUD1.ClearErrorLabels(this.Controls);
+            FrmCRUD.ClearErrorLabels(this.Controls);
         }
 
         private void btnCargarPlanilla_Click(object sender, EventArgs e)
         {
             List<string> extensiones = new List<string> { "json", "xml" };
 
-            string path = FrmCRUD1.CargarPlanilla(this.lblErrorCargarPlanilla, extensiones);
+            string path = FrmCRUD.CargarPlanilla(this.lblErrorCargarPlanilla, extensiones);
 
             if (path != string.Empty)
             {

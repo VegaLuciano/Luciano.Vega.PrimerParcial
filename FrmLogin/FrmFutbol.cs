@@ -10,13 +10,16 @@ using System.Windows.Forms;
 
 namespace Forms
 {
-    public partial class FrmFutbol : FrmCRUD1
+    public partial class FrmFutbol : Form
     {
-        public FrmFutbol() : base()
+        public FrmFutbol()
         {
             InitializeComponent();
         }
 
+        private void FrmFutbol_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

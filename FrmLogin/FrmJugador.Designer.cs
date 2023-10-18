@@ -1,6 +1,6 @@
 ﻿namespace Forms
 {
-    partial class FrmJugador1
+    partial class FrmJugador
     {
         /// <summary>
         /// Required designer variable.
@@ -37,6 +37,7 @@
             cmbGenero = new ComboBox();
             lblErrorGenero = new Label();
             lblGenero = new Label();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             npdEdad = new NumericUpDown();
             lblEdad = new Label();
             lblErrorEdad = new Label();
@@ -314,7 +315,7 @@
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // FrmJugador1
+            // FrmJugador
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -345,7 +346,7 @@
             Controls.Add(lblErrorNombre);
             Controls.Add(lblNombre);
             Controls.Add(txtNombre);
-            Name = "FrmJugador1";
+            Name = "FrmJugador";
             Text = "FrmJugador";
             Load += FrmJugador_Load;
             ((System.ComponentModel.ISupportInitialize)npdEdad).EndInit();
@@ -365,6 +366,7 @@
         private ComboBox cmbGenero;
         private Label lblErrorGenero;
         private Label lblGenero;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private NumericUpDown npdEdad;
         private Label lblEdad;
         private Label lblErrorEdad;
