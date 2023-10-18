@@ -50,7 +50,7 @@ namespace FrmLogin
             if (indexUser != -1)
             {
                 this.usuario = this.usuariosRegistrados[indexUser];
-                FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal(this.usuariosRegistrados, this.usuario);
+                FrmMenuPrincipal1 frmMenuPrincipal = new FrmMenuPrincipal1(this.usuariosRegistrados, this.usuario);
                 frmMenuPrincipal.Show();
                 //this.Close();
             }

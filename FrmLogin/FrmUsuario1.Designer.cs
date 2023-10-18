@@ -1,6 +1,6 @@
 ﻿namespace Forms
 {
-    partial class FrmUsuario
+    partial class FrmUsuario1
     {
         /// <summary>
         /// Required designer variable.
