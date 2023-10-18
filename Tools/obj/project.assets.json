@@ -14,6 +14,16 @@
             "related": ".xml"
           }
         }
+      },
+      "Entidades/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Entidades.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entidades.dll": {}
+        }
       }
     }
   },
@@ -47,10 +57,16 @@
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
+    },
+    "Entidades/1.0.0": {
+      "type": "project",
+      "path": "../Entidades/Entidades.csproj",
+      "msbuildProject": "../Entidades/Entidades.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Entidades >= 1.0.0",
       "Newtonsoft.Json >= 13.0.3"
     ]
   },
@@ -85,7 +101,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\PrograLaboII\\Soluciones\\Luciano.Vega\\Luciano.Vega.PrimerParcial\\Entidades\\Entidades.csproj": {
+              "projectPath": "D:\\PrograLaboII\\Soluciones\\Luciano.Vega\\Luciano.Vega.PrimerParcial\\Entidades\\Entidades.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

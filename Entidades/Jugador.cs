@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,20 +15,19 @@ namespace Entidades
         private int edad;
         private EDivisiones division;
         private double altura;
+        private bool esTitular;
         private EDeporte deporte;
-        private bool amonestado;
 
         public Jugador() 
         {
             this.nombre = "None";
             this.apellido= "None";
-            this.genero = EGenero.MASCULINO; 
+            this.genero = EGenero.Masculino; 
             this.dni = 0;
-            this.division= EDivisiones.MAYORES;
+            this.division= EDivisiones.Mayores;
             this.edad = 0;
-            this.deporte = EDeporte.FUTBOL;
+            this.deporte = EDeporte.Futbol;
             this.altura = 0;
-            this.Amonestado = false ;
         }
 
         public Jugador(string nombre, string apellido, int edad, EDeporte deporte)
@@ -39,7 +38,7 @@ namespace Entidades
             this.deporte = deporte;
         }
 
-        public Jugador(string nombre, string apellido,int edad, double altura, int dni, EDivisiones division, EGenero genero) 
+        public Jugador(string nombre, string apellido,int edad, double altura, int dni, EDivisiones division, EGenero genero, bool esTitular) 
         {
             this.nombre = nombre;
             this.edad = edad;
@@ -47,9 +46,11 @@ namespace Entidades
             this.apellido = apellido;
             this.dni = dni;
             this.division = division;
+            this.genero = genero;
+            this.esTitular = esTitular;
         }
 
-        public Jugador(string nombre, string apellido, int edad, double altura, int dni, EDivisiones division, EGenero genero, EDeporte deporte) : this(nombre, apellido, edad, altura, dni, division, genero)
+        public Jugador(string nombre, string apellido, int edad, double altura, int dni, EDivisiones division, EGenero genero, bool esTitular, EDeporte deporte) : this(nombre, apellido, edad, altura, dni, division, genero, esTitular)
         {
             this.deporte = deporte;
         }
@@ -122,8 +123,8 @@ namespace Entidades
         }
 
         public EDeporte Deporte { get => deporte; set => deporte = value;  }
-        public bool Amonestado { get => amonestado; set => amonestado = value; }
         public EGenero Genero { get => genero; set => genero = value; }
+        public bool EsTitular { get => esTitular; set => esTitular = value; }
 
         #endregion
 
@@ -156,19 +157,19 @@ namespace Entidades
             bool retorno = true;
             switch (division)
             {
-                case EDivisiones.SUB16:
+                case EDivisiones.Sub16:
                     if (edad > 16)
                         retorno = false;
                     break;
-                case EDivisiones.SUB18:
+                case EDivisiones.Sub18:
                     if (edad > 18)
                         retorno = false;
                     break;
-                case EDivisiones.SUB21:
+                case EDivisiones.Sub21:
                     if (edad > 21)
                         retorno = false;
                     break;
-                case EDivisiones.MAYORES:
+                case EDivisiones.Mayores:
                     retorno = true;
                     break;
             }

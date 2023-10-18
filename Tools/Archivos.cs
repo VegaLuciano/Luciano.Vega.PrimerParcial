@@ -4,6 +4,7 @@ using System.Text;
 using System.Xml.Serialization;
 using System.Xml;
 using System.Collections;
+using Entidades;
 
 namespace Tools
 {

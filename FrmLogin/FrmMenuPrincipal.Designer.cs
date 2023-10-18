@@ -29,31 +29,47 @@
         private void InitializeComponent()
         {
             btnAgregar = new Button();
+            lblUsuario = new Label();
             SuspendLayout();
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(53, 164);
+            btnAgregar.Location = new Point(23, 131);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(75, 23);
+            btnAgregar.Size = new Size(125, 23);
             btnAgregar.TabIndex = 0;
-            btnAgregar.Text = "Agregar";
+            btnAgregar.Text = "Agregar equipo";
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
+            // 
+            // lblUsuario
+            // 
+            lblUsuario.AutoSize = true;
+            lblUsuario.Location = new Point(23, 20);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(47, 15);
+            lblUsuario.TabIndex = 1;
+            lblUsuario.Text = "Usuario";
+            lblUsuario.Click += lblUsuario_Click_1;
             // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(685, 397);
+            Controls.Add(lblUsuario);
             Controls.Add(btnAgregar);
             Name = "FrmMenuPrincipal";
             Text = "FrmMenuPrincipal";
+            FormClosing += FrmMenuPrincipal_FormClosing;
+            Load += FrmMenuPrincipal_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button btnAgregar;
+        private Label lblUsuario;
     }
 }

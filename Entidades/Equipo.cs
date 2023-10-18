@@ -11,8 +11,7 @@ namespace Entidades
         protected EDivisiones division;
         protected string entrenador;
         protected List<Jugador> jugadores;
-        protected List<Jugador> suplentes;
-        protected List<Jugador> titulares;
+        
 
         public Equipo()
         {
@@ -21,8 +20,6 @@ namespace Entidades
             this.division = new EDivisiones();
             this.entrenador = "None";
             this.jugadores = new List<Jugador>();
-            this.suplentes = new List<Jugador>();
-            this.titulares = new List<Jugador>();
         }
 
         public Equipo( string nombre, int cantTitulares) :  this()
@@ -44,8 +41,6 @@ namespace Entidades
         }
 
         public abstract List<Jugador> Jugadores { get; }
-        public abstract List<Jugador> Suplentes { get; }
-        public abstract List<Jugador> Titulares { get; }
         public EDeporte Deporte { get => deporte; }
         protected string Nombre { get => nombre; set => nombre = value; }
         protected int CantTitulares { get => cantTitulares; set => cantTitulares = value; }
@@ -60,8 +55,8 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Nombre: {this.nombre} ");
             sb.AppendLine($"Deporte: {this.deporte}");
-            sb.AppendLine($"Entrenador: {this.entrenador }");
-            sb.AppendLine($"Jugadores: {this.cantJugadores}");
+            sb.AppendLine($"Entrenador: {this.entrenador}");
+            sb.AppendLine($"Jugadores: {this.jugadores.Count}");
             sb.AppendLine($"Suplentes: {this.cantSuplentes}");
             sb.AppendLine($"Titulares: {this.cantTitulares}");
             return sb.ToString();
@@ -72,5 +67,27 @@ namespace Entidades
             return this.Mostrar();
         }
 
+        public static Equipo operator +(Equipo equipo, Jugador jugador)
+        {
+            if (equipo.jugadores.IndexOf(jugador) == -1)
+            {
+                equipo.jugadores.Add(jugador);
+            }
+            else 
+            {
+                equipo.jugadores[equipo.jugadores.IndexOf(jugador)] = jugador;
+            }
+            
+            return equipo;
+        }
+        public static Equipo operator -(Equipo equipo, Jugador jugador)
+        {
+            if (equipo.jugadores.IndexOf(jugador) != -1)
+            {
+                equipo.jugadores.Remove(jugador);
+            }
+
+            return equipo;
+        }
     }
 }

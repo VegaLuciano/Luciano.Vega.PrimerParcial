@@ -8,21 +8,26 @@ namespace Entidades
 {
     public enum EDivisiones
     {
-        SUB16,
-        SUB18,
-        SUB21,
-        MAYORES
+        Sub16,
+        Sub18,
+        Sub21,
+        Mayores
     }
     public enum EDeporte 
     { 
-        FUTBOL,
-        BASQUET,
-        VOLEY,
+        Futbol,
+        Basquet,
+        Voley,
     }
 
     public enum EGenero
     {
-        MASCULINO,
-        FEMENINO
+        Masculino,
+        Femenino
+    }
+    public enum ECancha
+    {
+        Playa,
+        Cemento
     }
 }

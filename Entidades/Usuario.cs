@@ -123,5 +123,17 @@ namespace Entidades
 
             return retorno;
         }
+
+        private string MostrarDatos() 
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"{this.id} - {this.nombre} - {this.mail}");
+            return sb.ToString();
+        }
+
+        public override string ToString()
+        {
+            return this.MostrarDatos();
+        }
     }
 }

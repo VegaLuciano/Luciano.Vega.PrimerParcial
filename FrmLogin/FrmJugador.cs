@@ -17,14 +17,14 @@ namespace Forms
         public Jugador Jugador;
         public Equipo equipo;
         private int index;
-        private bool esNuevo;
+        private bool seModifica;
 
         public FrmJugador(Jugador jugador, Equipo equipo)
         {
             this.Jugador = jugador;
             InitializeComponent();
             this.equipo = equipo;
-            this.esNuevo = false;
+            this.seModifica = false;
         }
         public FrmJugador(Jugador jugador, Equipo equipo, int index)
         {
@@ -32,19 +32,13 @@ namespace Forms
             InitializeComponent();
             this.equipo = equipo;
             this.index = index;
-            this.esNuevo=true;
+            this.seModifica = true;
         }
 
         private void FrmJugador_Load(object sender, EventArgs e)
         {
-            this.lblErrorAltura.Text = string.Empty;
-            this.lblErrorDeporte.Text = string.Empty;
-            this.lblErrorApellido.Text = string.Empty;
-            this.lblErrorDivision.Text = string.Empty;
-            this.lblErrorDni.Text = string.Empty;
-            this.lblErrorGenero.Text = string.Empty;
-            this.lblErrorNombre.Text = string.Empty;
-            this.lblErrorEdad.Text = string.Empty;
+            FrmCRUD.ClearErrorLabels(this.Controls);
+            this.SetearCampoDeporte();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -112,19 +106,37 @@ namespace Forms
             else
                 this.lblErrorGenero.Text = string.Empty;
 
-            if (this.cmbDeporte.SelectedItem == null)
-            {
-                allOk = false;
-                this.lblErrorDeporte.Text = "Error, complete el campo";
-            }
-            else
-                this.lblErrorDeporte.Text = string.Empty;
-
             if (allOk)
             {
                 //this.equipo.Jugadores.Add();
                 DialogResult = DialogResult.OK;
             }
         }
+
+        public void SetearCamposModificar() 
+        {
+            if (this.seModifica)
+            { 
+                this.npdDni.Enabled = false;
+                this.cmbDeporte.Enabled = false;
+            }
+        }
+
+        private void SetearCampoDeporte() 
+        {
+            switch (this.equipo.Deporte)
+            {
+                case EDeporte.Futbol:
+                    this.cmbDeporte.SelectedItem = this.cmbDeporte.Items[0]; 
+                    break;
+                case EDeporte.Basquet:
+                    this.cmbDeporte.SelectedItem = this.cmbDeporte.Items[1];
+                    break;
+                case EDeporte.Voley:
+                    this.cmbDeporte.SelectedItem = this.cmbDeporte.Items[2];
+                    break;
+            }
+        }
+       
     }
 }

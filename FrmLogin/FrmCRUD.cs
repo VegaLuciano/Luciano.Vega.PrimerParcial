@@ -22,8 +22,8 @@ namespace Forms
         public List<Jugador>? listJugadores;
         public FrmCRUD()
         {
-            //this.listaEquipos = new List<Equipo>();
-            //this.listJugadores = new List<Jugador>();
+            this.listaEquipos = new List<Equipo>();
+            this.listJugadores = new List<Jugador>();
         }
 
         public FrmCRUD(List<Equipo> listaEquipos, Usuario usuario)
@@ -36,12 +36,8 @@ namespace Forms
 
         private void FrmCRUD_Load(object sender, EventArgs e)
         {
-                this.cmbDivision.Items.AddRange(Enum.GetNames(typeof(EDivisiones)));
-            this.lblErrorNombreEntrenador.Text = string.Empty;
-            this.lblErrorNombre.Text = string.Empty;
-            this.lblErrorCargarPlanilla.Text = string.Empty;
-            this.lblErrorCantidades.Text = string.Empty;
-            this.lblErrorCmb.Text = string.Empty;
+            this.cmbDivision.Items.AddRange(Enum.GetNames(typeof(EDivisiones)));
+            FrmCRUD.ClearErrorLabels(this.Controls);
         }
 
         private void btnCargarPlanilla_Click(object sender, EventArgs e)
@@ -133,7 +129,7 @@ namespace Forms
 
         private void btnContinuar_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         public bool FuncionContinuar()
@@ -181,6 +177,18 @@ namespace Forms
 
             return allOk;
         }
-    }
 
+        public static void ClearErrorLabels(Control.ControlCollection controls)
+        {
+            foreach (Control control in controls)
+            {
+                if (control is Label && control.Name.StartsWith("lblError"))
+                {
+                    Label errorLabel = (Label)control;
+                    errorLabel.Text = string.Empty;
+                }
+            }
+        }
+
+    }
 }

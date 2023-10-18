@@ -159,7 +159,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\PrograLaboII\\Soluciones\\Luciano.Vega\\Luciano.Vega.PrimerParcial\\Entidades\\Entidades.csproj": {
+                "projectPath": "D:\\PrograLaboII\\Soluciones\\Luciano.Vega\\Luciano.Vega.PrimerParcial\\Entidades\\Entidades.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

@@ -9,20 +9,17 @@ namespace Entidades
 {
     public class Futbol : Equipo
     { 
-        private List<Jugador> amonestados;
         private Color colorCamisetaLocal;
         private Color colorCamisetaVisitante;
 
         public Futbol() : base() 
         {
-            this.amonestados = new List<Jugador>();
-            this.deporte = EDeporte.FUTBOL;
+            this.deporte = EDeporte.Futbol;
         }
 
         public Futbol(string nombre, int cantTitulares, EDivisiones division, string entrenador) : base( nombre, cantTitulares, division)
         {
-            this.amonestados = new List<Jugador>();
-            this.deporte = EDeporte.FUTBOL;
+            this.deporte = EDeporte.Futbol;
             this.entrenador = entrenador;
         }
 
@@ -38,10 +35,6 @@ namespace Entidades
         }
 
         public override List<Jugador> Jugadores { get => Jugadores;}
-        public override List<Jugador> Titulares { get => titulares; }
-        public override List<Jugador> Suplentes { get => suplentes; }
-        public List<Jugador> Amonestados { get => amonestados; }
-
         public Color ColorCamiseteLocal { get => colorCamisetaLocal; set => colorCamisetaLocal = value; }
         public Color ColorCamisetaVisitante { get => colorCamisetaVisitante; set => colorCamisetaVisitante = value; }
 
@@ -49,19 +42,8 @@ namespace Entidades
         private void Formacion(int titulares) 
         {
             Random random = new Random();
-            this.titulares = this.jugadores.OrderBy(x => random.Next()).Take(titulares).ToList();
-            this.suplentes = this.jugadores.Except(this.titulares).ToList();
-        }
-
-        private void ComprobarAmonestados() 
-        {
-            foreach (Jugador jugador in jugadores) 
-            {
-                if (jugador.Amonestado == true) 
-                {
-                    this.amonestados.Add(jugador);
-                }
-            }
+            //this.titulares = this.jugadores.OrderBy(x => random.Next()).Take(titulares).ToList();
+            //this.suplentes = this.jugadores.Except(this.titulares).ToList();
         }
 
         public override string PresentarFormacion() 
@@ -69,7 +51,7 @@ namespace Entidades
             this.Formacion(this.cantTitulares);
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Titulares:");
-            foreach(Jugador jugador in this.titulares)
+            /*foreach(Jugador jugador in this.titulares)
             {
                 if (jugador == this.titulares[0])
                     sb.Append($"{jugador.Nombre} - Capitan");
@@ -79,7 +61,7 @@ namespace Entidades
             foreach (Jugador jugador in this.suplentes)
             {
                 sb.AppendLine(jugador.Nombre);
-            }
+            }*/
 
             return sb.ToString();
         }
