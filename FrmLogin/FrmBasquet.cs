@@ -43,12 +43,12 @@ namespace Forms
                         this.lblErrorSponsor.Text = string.Empty;
                         this.lblErrorCmb.Text = string.Empty;
                     }
-                    else 
+                    else
                     {
                         this.lblErrorSponsor.Text = "Error, complete los campos";
                     }
                 }
-                else 
+                else
                 {
                     this.lblErrorSponsor.Text = "Error, sponsor invalido";
                 }

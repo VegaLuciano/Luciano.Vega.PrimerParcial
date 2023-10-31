@@ -151,6 +151,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.SteelBlue;
             ClientSize = new Size(677, 343);
             Controls.Add(ErrorEquipoMedico);
             Controls.Add(groupBox1);
