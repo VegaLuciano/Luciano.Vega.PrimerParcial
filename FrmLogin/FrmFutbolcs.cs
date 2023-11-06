@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Forms
 {
-    public partial class FrmFutbol : FrmCRUD
+    public partial class FrmFutbol : FrmCRUD1
     {
         private Color colorCamisetaLocal;
         private Color colorCamisetaVisitante;
-        public FrmFutbol(List<Equipo> listaEquipo, Usuario usuario) : base(listaEquipo, usuario)
+        public FrmFutbol(Tabla listaEquipo, Usuario usuario) : base(listaEquipo, usuario)
         {
             InitializeComponent();
 
@@ -34,9 +34,9 @@ namespace Forms
 
                         Futbol EquipoFutbol = new Futbol(this.txtNombre.Text, (int)this.npdCantTitulares.Value, base.SetearCampoDivision(), this.txtNombreEntrenador.Text,
                             this.colorCamisetaLocal, this.colorCamisetaVisitante, EDeporte.Futbol, (int)this.npdCantSuplentes.Value);
-                        this.listaEquipos.Add(EquipoFutbol);
+                        this.tabla.ListaFutbol.Add(EquipoFutbol);
 
-                        EquipoFutbol.Jugadores = this.listJugadores;
+                        this.listJugadores = EquipoFutbol.Jugadores;
                         MessageBox.Show(EquipoFutbol.ToString());
                         MessageBox.Show("Se cargó todo exitosamente!");
                         this.lblErrorLocal.Text = string.Empty;

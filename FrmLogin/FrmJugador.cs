@@ -37,7 +37,7 @@ namespace Forms
 
         private void FrmJugador_Load(object sender, EventArgs e)
         {
-            FrmCRUD.ClearErrorLabels(this.Controls);
+            FrmCRUD1.ClearErrorLabels(this.Controls);
             this.SetearCampoDeporte();
         }
 

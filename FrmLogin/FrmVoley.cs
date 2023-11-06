@@ -13,9 +13,9 @@ using Tools;
 
 namespace Forms
 {
-    public partial class FrmVoley : FrmCRUD
+    public partial class FrmVoley : FrmCRUD1
     {
-        public FrmVoley(List<Equipo> listaEquipo, Usuario usuario) : base(listaEquipo, usuario)
+        public FrmVoley(Tabla listaEquipo, Usuario usuario) : base(listaEquipo, usuario)
         {
             InitializeComponent();
         }
@@ -52,8 +52,8 @@ namespace Forms
                         Voley EquipoVoley = new Voley(this.txtNombre.Text, (int)this.npdCantTitulares.Value, base.SetearCampoDivision(), this.txtNombreEntrenador.Text,
                             SetearCampoCancha(), this.txtSedeEquipo.Text, EDeporte.Voley, (int)this.npdCantSuplentes.Value);
 
-                        this.listaEquipos.Add(EquipoVoley);
-                        EquipoVoley.Jugadores = this.listJugadores;
+                        this.tabla.ListaVoley.Add(EquipoVoley);
+                        this.listJugadores = EquipoVoley.Jugadores;
                         MessageBox.Show(EquipoVoley.ToString());
                         MessageBox.Show("Se cargó todo exitosamente!");
                         this.lblErrorSede.Text = string.Empty;

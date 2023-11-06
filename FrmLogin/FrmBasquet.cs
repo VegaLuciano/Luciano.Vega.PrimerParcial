@@ -12,9 +12,9 @@ using Tools;
 
 namespace Forms
 {
-    public partial class FrmBasquet : FrmCRUD
+    public partial class FrmBasquet : FrmCRUD1
     {
-        public FrmBasquet(List<Equipo> listaEquipos, Usuario usuario) : base(listaEquipos, usuario)
+        public FrmBasquet(Tabla tabla, Usuario usuario) : base(tabla, usuario)
         {
             InitializeComponent();
 
@@ -33,12 +33,12 @@ namespace Forms
                 {
                     if (!this.rdbNo.Checked == this.RdbSi.Checked)
                     {
-                        Basquet EquipoVoley = new Basquet(this.txtNombre.Text, (int)this.npdCantTitulares.Value, base.SetearCampoDivision(), this.txtNombreEntrenador.Text,
+                        Basquet EquipoBasquet = new Basquet(this.txtNombre.Text, (int)this.npdCantTitulares.Value, base.SetearCampoDivision(), this.txtNombreEntrenador.Text,
                             this.RdbSi.Checked, this.txtSponsor.Text, EDeporte.Basquet, (int)this.npdCantSuplentes.Value);
 
-                        this.listaEquipos.Add(EquipoVoley);
-                        EquipoVoley.Jugadores = this.listJugadores;
-                        MessageBox.Show(EquipoVoley.ToString());
+                        this.tabla.ListaBasquet.Add(EquipoBasquet);
+                        this.listJugadores = EquipoBasquet.Jugadores;
+                        MessageBox.Show(EquipoBasquet.ToString());
                         MessageBox.Show("Se cargó todo exitosamente!");
                         this.lblErrorSponsor.Text = string.Empty;
                         this.lblErrorCmb.Text = string.Empty;

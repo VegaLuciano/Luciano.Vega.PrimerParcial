@@ -15,17 +15,16 @@ namespace Forms
     {
         public List<Usuario> listaUsuarios;
         public Usuario usuario;
-        public List<Equipo> listaEquipos;
         private DateTime fecha;
         private string pathUsuarios;
         private Form? formularioAcutal = null;
+        public Tabla tabla;
 
         public FrmMenuPrincipal(List<Usuario> listaUsuarios, Usuario usuario)
         {
             InitializeComponent();
             this.listaUsuarios = listaUsuarios;
             this.usuario = usuario;
-            this.listaEquipos = new List<Equipo>();
             this.fecha = DateTime.Now;
             this.pathUsuarios = "usuarios.log";
             this.lblUsuario.Text = this.usuario.Nombre;
@@ -35,6 +34,7 @@ namespace Forms
             this.btnVoley.Visible = false;
             this.btnBasquet.Visible = false;
             this.btnBasquet.Visible = false;
+            this.tabla = new Tabla();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace Forms
 
         private void btnVoley_Click(object sender, EventArgs e)
         {
-            FrmVoley frmVoley = new FrmVoley(this.listaEquipos, this.usuario);
+            FrmVoley frmVoley = new FrmVoley(this.tabla , this.usuario);
             AbrirFormularioHijo(frmVoley);
 
         }
@@ -121,7 +121,7 @@ namespace Forms
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            FrmMostrar frmMostrar = new FrmMostrar(this.listaEquipos);
+            FrmMostrar1 frmMostrar = new FrmMostrar1(this.listaEquipos);
             AbrirFormularioHijo(frmMostrar);
         }
     }
