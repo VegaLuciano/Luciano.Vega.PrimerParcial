@@ -44,6 +44,7 @@
             txtMail.Name = "txtMail";
             txtMail.Size = new Size(186, 27);
             txtMail.TabIndex = 0;
+            txtMail.Text = "lucianovega@parcial.com";
             // 
             // txtContraseña
             // 
@@ -52,6 +53,7 @@
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(186, 27);
             txtContraseña.TabIndex = 1;
+            txtContraseña.Text = "Password_1";
             // 
             // lblUsername
             // 
@@ -109,7 +111,7 @@
             btnRegistrarse.UseVisualStyleBackColor = true;
             btnRegistrarse.Click += btnRegistrarse_Click;
             // 
-            // FrmLogin
+            // FrmLogin1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -124,7 +126,7 @@
             Controls.Add(txtMail);
             ForeColor = SystemColors.AppWorkspace;
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "FrmLogin";
+            Name = "FrmLogin1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             Load += Form1_Load;

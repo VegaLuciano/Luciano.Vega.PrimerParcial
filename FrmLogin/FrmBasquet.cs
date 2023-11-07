@@ -37,7 +37,7 @@ namespace Forms
                             this.RdbSi.Checked, this.txtSponsor.Text, EDeporte.Basquet, (int)this.npdCantSuplentes.Value);
 
                         this.tabla.ListaBasquet.Add(EquipoBasquet);
-                        this.listJugadores = EquipoBasquet.Jugadores;
+                        EquipoBasquet.Jugadores = this.listJugadores;
                         MessageBox.Show(EquipoBasquet.ToString());
                         MessageBox.Show("Se cargó todo exitosamente!");
                         this.lblErrorSponsor.Text = string.Empty;

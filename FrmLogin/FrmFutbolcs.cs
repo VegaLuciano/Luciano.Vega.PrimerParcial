@@ -35,8 +35,7 @@ namespace Forms
                         Futbol EquipoFutbol = new Futbol(this.txtNombre.Text, (int)this.npdCantTitulares.Value, base.SetearCampoDivision(), this.txtNombreEntrenador.Text,
                             this.colorCamisetaLocal, this.colorCamisetaVisitante, EDeporte.Futbol, (int)this.npdCantSuplentes.Value);
                         this.tabla.ListaFutbol.Add(EquipoFutbol);
-
-                        this.listJugadores = EquipoFutbol.Jugadores;
+                        EquipoFutbol.Jugadores = this.listJugadores;
                         MessageBox.Show(EquipoFutbol.ToString());
                         MessageBox.Show("Se cargó todo exitosamente!");
                         this.lblErrorLocal.Text = string.Empty;

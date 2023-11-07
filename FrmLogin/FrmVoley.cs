@@ -53,7 +53,7 @@ namespace Forms
                             SetearCampoCancha(), this.txtSedeEquipo.Text, EDeporte.Voley, (int)this.npdCantSuplentes.Value);
 
                         this.tabla.ListaVoley.Add(EquipoVoley);
-                        this.listJugadores = EquipoVoley.Jugadores;
+                        EquipoVoley.Jugadores = this.listJugadores;
                         MessageBox.Show(EquipoVoley.ToString());
                         MessageBox.Show("Se cargó todo exitosamente!");
                         this.lblErrorSede.Text = string.Empty;

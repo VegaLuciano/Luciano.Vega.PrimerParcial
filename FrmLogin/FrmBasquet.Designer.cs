@@ -34,7 +34,7 @@
             groupBox1 = new GroupBox();
             rdbNo = new RadioButton();
             RdbSi = new RadioButton();
-            ErrorEquipoMedico = new Label();
+            lblErrorEquipoMedico = new Label();
             ((System.ComponentModel.ISupportInitialize)npdCantJugadores).BeginInit();
             ((System.ComponentModel.ISupportInitialize)npdCantTitulares).BeginInit();
             ((System.ComponentModel.ISupportInitialize)npdCantSuplentes).BeginInit();
@@ -136,24 +136,24 @@
             RdbSi.Text = "Si";
             RdbSi.UseVisualStyleBackColor = true;
             // 
-            // ErrorEquipoMedico
+            // lblErrorEquipoMedico
             // 
-            ErrorEquipoMedico.AutoSize = true;
-            ErrorEquipoMedico.Font = new Font("Segoe UI", 8.25F, FontStyle.Italic, GraphicsUnit.Point);
-            ErrorEquipoMedico.ForeColor = Color.Red;
-            ErrorEquipoMedico.Location = new Point(270, 185);
-            ErrorEquipoMedico.Name = "ErrorEquipoMedico";
-            ErrorEquipoMedico.Size = new Size(67, 13);
-            ErrorEquipoMedico.TabIndex = 27;
-            ErrorEquipoMedico.Text = "ErrorSponsor";
+            lblErrorEquipoMedico.AutoSize = true;
+            lblErrorEquipoMedico.Font = new Font("Segoe UI", 8.25F, FontStyle.Italic, GraphicsUnit.Point);
+            lblErrorEquipoMedico.ForeColor = Color.Red;
+            lblErrorEquipoMedico.Location = new Point(270, 185);
+            lblErrorEquipoMedico.Name = "lblErrorEquipoMedico";
+            lblErrorEquipoMedico.Size = new Size(67, 13);
+            lblErrorEquipoMedico.TabIndex = 27;
+            lblErrorEquipoMedico.Text = "ErrorSponsor";
             // 
             // FrmBasquet
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
-            ClientSize = new Size(677, 343);
-            Controls.Add(ErrorEquipoMedico);
+            ClientSize = new Size(880, 433);
+            Controls.Add(lblErrorEquipoMedico);
             Controls.Add(groupBox1);
             Controls.Add(lblErrorSponsor);
             Controls.Add(lblSponsor);
@@ -185,7 +185,7 @@
             Controls.SetChildIndex(lblSponsor, 0);
             Controls.SetChildIndex(lblErrorSponsor, 0);
             Controls.SetChildIndex(groupBox1, 0);
-            Controls.SetChildIndex(ErrorEquipoMedico, 0);
+            Controls.SetChildIndex(lblErrorEquipoMedico, 0);
             ((System.ComponentModel.ISupportInitialize)npdCantJugadores).EndInit();
             ((System.ComponentModel.ISupportInitialize)npdCantTitulares).EndInit();
             ((System.ComponentModel.ISupportInitialize)npdCantSuplentes).EndInit();
@@ -203,6 +203,6 @@
         private GroupBox groupBox1;
         private RadioButton rdbNo;
         private RadioButton RdbSi;
-        private Label ErrorEquipoMedico;
+        private Label lblErrorEquipoMedico;
     }
 }

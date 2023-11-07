@@ -33,7 +33,6 @@ namespace FrmLogin
             if (listAux != null)
             {
                 this.usuariosRegistrados = listAux;
-                MessageBox.Show("Se cargo la wea");
             }
             else
             {
@@ -51,8 +50,13 @@ namespace FrmLogin
             {
                 this.usuario = this.usuariosRegistrados[indexUser];
                 FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal(this.usuariosRegistrados, this.usuario);
-                frmMenuPrincipal.Show();
-                this.Visible = false;
+                frmMenuPrincipal.ShowDialog();
+                this.Hide();
+
+                if (frmMenuPrincipal.DialogResult == DialogResult.OK)
+                {
+                    this.Close();
+                }
             }
             else
             {

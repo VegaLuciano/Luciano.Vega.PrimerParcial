@@ -47,21 +47,26 @@ namespace Forms
             if (path != string.Empty)
             {
                 string extension = Path.GetExtension(path);
+                List<Jugador> listaAux = new List<Jugador>();
                 if (extension == ".json")
                 {
-                    this.listJugadores = Archivo.LeerArchivoJson<Jugador>(path);
+                    listaAux = Archivo.LeerArchivoJson<Jugador>(path);
                 }
                 else
                 {
-                    this.listJugadores = Archivo.LeerArchivoXML<Jugador>(path);
+                    listaAux = Archivo.LeerArchivoXML<Jugador>(path);
                 }
 
-                this.npdCantJugadores.Value = this.listJugadores.Count;
-                this.npdCantJugadores.Enabled = false;
-                Equipo.ElegirTitulares(this.listJugadores, (int)this.npdCantTitulares.Value);
-                this.npdCantSuplentes.Value = this.listJugadores.Count - Equipo.ContarTitulares(this.listJugadores);
-                MessageBox.Show($"{this.npdCantSuplentes.Value} suplentes");
-                this.npdCantSuplentes.Enabled = false;
+                if (listaAux != null)
+                {
+                    this.listJugadores = listaAux;
+                    this.npdCantJugadores.Value = this.listJugadores.Count;
+                    this.npdCantJugadores.Enabled = false;
+                    Equipo.ElegirTitulares(this.listJugadores, (int)this.npdCantTitulares.Value);
+                    this.npdCantSuplentes.Value = this.listJugadores.Count - Equipo.ContarTitulares(this.listJugadores);
+                    MessageBox.Show($"{this.npdCantSuplentes.Value} suplentes");
+                    this.npdCantSuplentes.Enabled = false;
+                }
             }
         }
 

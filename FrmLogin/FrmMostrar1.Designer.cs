@@ -32,16 +32,17 @@
             btnVoley = new Button();
             btnBasquet = new Button();
             btnFutbol = new Button();
+            btnModificar = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgMostrar).BeginInit();
             SuspendLayout();
             // 
             // dtgMostrar
             // 
             dtgMostrar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgMostrar.Location = new Point(12, 21);
+            dtgMostrar.Location = new Point(12, 12);
             dtgMostrar.Name = "dtgMostrar";
             dtgMostrar.RowTemplate.Height = 25;
-            dtgMostrar.Size = new Size(653, 265);
+            dtgMostrar.Size = new Size(856, 376);
             dtgMostrar.TabIndex = 0;
             // 
             // btnVoley
@@ -52,7 +53,7 @@
             btnVoley.FlatStyle = FlatStyle.Flat;
             btnVoley.ForeColor = SystemColors.ActiveCaptionText;
             btnVoley.ImageAlign = ContentAlignment.BottomCenter;
-            btnVoley.Location = new Point(66, 304);
+            btnVoley.Location = new Point(23, 394);
             btnVoley.Name = "btnVoley";
             btnVoley.Size = new Size(140, 27);
             btnVoley.TabIndex = 4;
@@ -69,7 +70,7 @@
             btnBasquet.FlatStyle = FlatStyle.Flat;
             btnBasquet.ForeColor = SystemColors.ActiveCaptionText;
             btnBasquet.ImageAlign = ContentAlignment.BottomCenter;
-            btnBasquet.Location = new Point(244, 304);
+            btnBasquet.Location = new Point(169, 394);
             btnBasquet.Name = "btnBasquet";
             btnBasquet.Size = new Size(140, 27);
             btnBasquet.TabIndex = 5;
@@ -86,7 +87,7 @@
             btnFutbol.FlatStyle = FlatStyle.Flat;
             btnFutbol.ForeColor = SystemColors.ActiveCaptionText;
             btnFutbol.ImageAlign = ContentAlignment.BottomCenter;
-            btnFutbol.Location = new Point(428, 304);
+            btnFutbol.Location = new Point(315, 394);
             btnFutbol.Name = "btnFutbol";
             btnFutbol.Size = new Size(140, 27);
             btnFutbol.TabIndex = 6;
@@ -95,18 +96,37 @@
             btnFutbol.UseVisualStyleBackColor = false;
             btnFutbol.Click += btnFutbol_Click;
             // 
-            // FrmMostrar
+            // btnModificar
+            // 
+            btnModificar.BackColor = Color.SlateBlue;
+            btnModificar.Cursor = Cursors.No;
+            btnModificar.FlatAppearance.BorderColor = Color.DarkSlateBlue;
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnModificar.ForeColor = SystemColors.ActiveCaptionText;
+            btnModificar.ImageAlign = ContentAlignment.BottomCenter;
+            btnModificar.Location = new Point(574, 394);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(104, 24);
+            btnModificar.TabIndex = 7;
+            btnModificar.Text = "Modificar";
+            btnModificar.TextAlign = ContentAlignment.BottomCenter;
+            btnModificar.UseVisualStyleBackColor = false;
+            // 
+            // FrmMostrar1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
-            ClientSize = new Size(677, 343);
+            ClientSize = new Size(880, 433);
+            Controls.Add(btnModificar);
             Controls.Add(btnFutbol);
             Controls.Add(btnBasquet);
             Controls.Add(btnVoley);
             Controls.Add(dtgMostrar);
-            Name = "FrmMostrar";
+            Name = "FrmMostrar1";
             Text = "FrmMostrar";
+            Load += FrmMostrar1_Load;
             ((System.ComponentModel.ISupportInitialize)dtgMostrar).EndInit();
             ResumeLayout(false);
         }
@@ -117,5 +137,6 @@
         private Button btnVoley;
         private Button btnBasquet;
         private Button btnFutbol;
+        private Button btnModificar;
     }
 }

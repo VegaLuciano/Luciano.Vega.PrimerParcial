@@ -70,9 +70,9 @@
             pnlFormulario.Controls.Add(btnBasquet);
             pnlFormulario.Controls.Add(btnFutbol);
             pnlFormulario.Controls.Add(btnVoley);
-            pnlFormulario.Location = new Point(158, 28);
+            pnlFormulario.Location = new Point(158, 12);
             pnlFormulario.Name = "pnlFormulario";
-            pnlFormulario.Size = new Size(693, 382);
+            pnlFormulario.Size = new Size(896, 472);
             pnlFormulario.TabIndex = 2;
             pnlFormulario.Paint += panel1_Paint;
             // 
@@ -127,7 +127,7 @@
             btnMostrar.FlatAppearance.BorderColor = SystemColors.ButtonFace;
             btnMostrar.FlatStyle = FlatStyle.Flat;
             btnMostrar.ForeColor = SystemColors.ActiveCaptionText;
-            btnMostrar.Location = new Point(12, 169);
+            btnMostrar.Location = new Point(12, 123);
             btnMostrar.Name = "btnMostrar";
             btnMostrar.Size = new Size(140, 32);
             btnMostrar.TabIndex = 3;
@@ -140,7 +140,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateBlue;
-            ClientSize = new Size(884, 430);
+            ClientSize = new Size(1080, 513);
             Controls.Add(btnMostrar);
             Controls.Add(pnlFormulario);
             Controls.Add(lblUsuario);

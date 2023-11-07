@@ -13,10 +13,10 @@ namespace Forms
 {
     public partial class FrmMostrar1 : Form
     {
-        List<Equipo> listaEquipo;
-        public FrmMostrar1(List<Equipo> listaEquipos)
+        Tabla tabla;
+        public FrmMostrar1(Tabla tabla)
         {
-            this.listaEquipo = listaEquipos;
+            this.tabla = tabla;
             InitializeComponent();
         }
 
@@ -24,11 +24,11 @@ namespace Forms
         {
             List<Voley> list = new List<Voley>();
 
-            foreach (var equipo in listaEquipo)
+            foreach (var equipo in tabla.ListaVoley)
             {
                 if (equipo.Deporte == EDeporte.Voley)
                 {
-                    list.Add((Voley)equipo);
+                    list.Add(equipo);
                 }
             }
 
@@ -41,7 +41,7 @@ namespace Forms
         {
             List<Basquet> list = new List<Basquet>();
 
-            foreach (var equipo in listaEquipo)
+            foreach (var equipo in tabla.ListaBasquet)
             {
                 if (equipo.Deporte == EDeporte.Basquet)
                 {
@@ -59,7 +59,7 @@ namespace Forms
         {
             List<Futbol> list = new List<Futbol>();
 
-            foreach (var equipo in listaEquipo)
+            foreach (var equipo in tabla.ListaFutbol)
             {
                 if (equipo.Deporte == EDeporte.Futbol)
                 {
@@ -69,6 +69,11 @@ namespace Forms
 
             this.dtgMostrar.DataSource = null;
             this.dtgMostrar.DataSource = list;
+        }
+
+        private void FrmMostrar1_Load(object sender, EventArgs e)
+        {
+
         }
 
 

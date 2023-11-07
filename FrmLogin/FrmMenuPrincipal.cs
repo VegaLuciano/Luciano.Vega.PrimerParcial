@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tools;
 
 namespace Forms
 {
@@ -17,6 +18,7 @@ namespace Forms
         public Usuario usuario;
         private DateTime fecha;
         private string pathUsuarios;
+        private string pathEquiposVoley;
         private Form? formularioAcutal = null;
         public Tabla tabla;
 
@@ -27,6 +29,7 @@ namespace Forms
             this.usuario = usuario;
             this.fecha = DateTime.Now;
             this.pathUsuarios = "usuarios.log";
+            this.pathEquiposVoley = "voley.json";
             this.lblUsuario.Text = this.usuario.Nombre;
             this.btnFutbol.Enabled = false;
             this.btnFutbol.Visible = false;
@@ -49,12 +52,24 @@ namespace Forms
 
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
-
+            this.CargarArchivos();
         }
 
         private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.GuardarArhivos();
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void CargarArchivos()
+        {
+            List<Voley>? listAux = Archivo.LeerArchivoJson<Voley>(this.pathEquiposVoley);
+
+            if (listAux != null)
+            {
+                this.tabla.ListaVoley = listAux;
+            }
+
         }
 
         private void GuardarArhivos()
@@ -65,7 +80,7 @@ namespace Forms
                 sw.WriteLine("  " + fecha.ToString("yyyy-MM-dd HH:mm:ss"));
             }
 
-
+            Archivo.GuardarArchivoJson(this.pathEquiposVoley, this.tabla.ListaVoley);
         }
 
         private void lblUsuario_Click_1(object sender, EventArgs e)
@@ -76,20 +91,20 @@ namespace Forms
 
         private void btnVoley_Click(object sender, EventArgs e)
         {
-            FrmVoley frmVoley = new FrmVoley(this.tabla , this.usuario);
+            FrmVoley frmVoley = new FrmVoley(this.tabla, this.usuario);
             AbrirFormularioHijo(frmVoley);
 
         }
 
         private void btnFutbol_Click(object sender, EventArgs e)
         {
-            FrmFutbol frmFutbol = new FrmFutbol(this.listaEquipos, this.usuario);
+            FrmFutbol frmFutbol = new FrmFutbol(this.tabla, this.usuario);
             AbrirFormularioHijo(frmFutbol);
         }
 
         private void btnBasquet_Click(object sender, EventArgs e)
         {
-            FrmBasquet frmBasquet = new FrmBasquet(this.listaEquipos, this.usuario);
+            FrmBasquet frmBasquet = new FrmBasquet(this.tabla, this.usuario);
             AbrirFormularioHijo(frmBasquet);
         }
 
@@ -121,7 +136,7 @@ namespace Forms
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            FrmMostrar1 frmMostrar = new FrmMostrar1(this.listaEquipos);
+            FrmMostrar1 frmMostrar = new FrmMostrar1(this.tabla);
             AbrirFormularioHijo(frmMostrar);
         }
     }

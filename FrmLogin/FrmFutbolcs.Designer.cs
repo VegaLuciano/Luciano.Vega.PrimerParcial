@@ -139,7 +139,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
-            ClientSize = new Size(677, 343);
+            ClientSize = new Size(880, 433);
             Controls.Add(lblErrorVisitante);
             Controls.Add(lblErrorLocal);
             Controls.Add(btnVisitante);

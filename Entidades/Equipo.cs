@@ -42,11 +42,11 @@ namespace Entidades
 
         public abstract List<Jugador> Jugadores { get; set;}
         public EDeporte Deporte { get => deporte; }
-        protected string Nombre { get => nombre; set => nombre = value; }
-        protected int CantTitulares { get => cantTitulares; set => cantTitulares = value; }
-        protected int CantSuplentes { get => cantSuplentes; set => cantSuplentes = value; }
-        protected EDivisiones Division { get => division; set => division = value; }
-        protected string Entrenador { get => entrenador; set => entrenador = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public int CantTitulares { get => cantTitulares; set => cantTitulares = value; }
+        public int CantSuplentes { get => cantSuplentes; set => cantSuplentes = value; }
+        public EDivisiones Division { get => division; set => division = value; }
+        public string Entrenador { get => entrenador; set => entrenador = value; }
 
         public abstract string PresentarFormacion();
 
