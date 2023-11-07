@@ -5,98 +5,127 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Forms
 {
     public partial class FrmMostrar1 : Form
     {
-        Tabla tabla;
-        public FrmMostrar1(Tabla tabla)
+        private Tabla tabla;
+        private EDeporte deporteSeleccionado;
+        private Equipo? equipoSeleccionado;
+
+        public FrmMostrar1()
+        {
+            InitializeComponent();
+            this.tabla = new Tabla();
+        }
+
+        public FrmMostrar1(Tabla tabla, EDeporte deporte) : this()
         {
             this.tabla = tabla;
-            InitializeComponent();
+            this.deporteSeleccionado = deporte;
         }
 
-        private void btnVoley_Click(object sender, EventArgs e)
-        {
-            List<Voley> list = new List<Voley>();
-
-            foreach (var equipo in tabla.ListaVoley)
-            {
-                if (equipo.Deporte == EDeporte.Voley)
-                {
-                    list.Add(equipo);
-                }
-            }
-
-            this.dtgMostrar.DataSource = null;
-            this.dtgMostrar.DataSource = list;
-
-        }
-
-        private void btnBasquet_Click(object sender, EventArgs e)
-        {
-            List<Basquet> list = new List<Basquet>();
-
-            foreach (var equipo in tabla.ListaBasquet)
-            {
-                if (equipo.Deporte == EDeporte.Basquet)
-                {
-                    list.Add((Basquet)equipo);
-                }
-            }
-
-            this.dtgMostrar.DataSource = null;
-            this.dtgMostrar.DataSource = list;
-
-        }
-
-
-        private void btnFutbol_Click(object sender, EventArgs e)
-        {
-            List<Futbol> list = new List<Futbol>();
-
-            foreach (var equipo in tabla.ListaFutbol)
-            {
-                if (equipo.Deporte == EDeporte.Futbol)
-                {
-                    list.Add((Futbol)equipo);
-                }
-            }
-
-            this.dtgMostrar.DataSource = null;
-            this.dtgMostrar.DataSource = list;
-        }
 
         private void FrmMostrar1_Load(object sender, EventArgs e)
         {
+            switch (deporteSeleccionado)
+            {
+                case EDeporte.Futbol:
+                    this.dtgMostrar.DataSource = this.tabla.ListaFutbol;
+                    break;
+                case EDeporte.Basquet:
+                    this.dtgMostrar.DataSource = this.tabla.ListaBasquet;
+                    break;
+                case EDeporte.Voley:
+                    this.dtgMostrar.DataSource = this.tabla.ListaVoley;
+                    break;
+            };
+        }
+
+        private void btnJugadores_Click(object sender, EventArgs e)
+        {
+            List<Jugador>? list = new List<Jugador>();
+            list = this.equipoSeleccionado.Jugadores;
+
+            if (this.dtgMostrar.SelectedRows.Count > 0)
+            {
+                this.dtgMostrar.DataSource = null;
+                this.dtgMostrar.DataSource = list;
+            }
 
         }
 
+        private void dtgMostrar_SelectionChanged(object sender, EventArgs e)
+        {
 
-        /*private void btnEscalada_Click(object sender, EventArgs e)
+            if (this.dtgMostrar.SelectedRows.Count > 0)
+            {
+                // Obtén el índice de la fila seleccionada
+                int index = this.dtgMostrar.SelectedRows[0].Index;
+
+                if (index >= 0)
+                {
+                    switch (this.deporteSeleccionado)
+                    {
+                        case EDeporte.Futbol:
+                            this.equipoSeleccionado = this.tabla.ListaFutbol[index];
+                            break;
+                        case EDeporte.Voley:
+                            this.equipoSeleccionado = this.tabla.ListaVoley[index];
+                            break;
+                        case EDeporte.Basquet:
+                            this.equipoSeleccionado = this.tabla.ListaBasquet[index];
+                            break;
+                    };
+                }
+            }
+        }
+
+        private void ActualizarDataGridView()
         {
             this.dtgMostrar.DataSource = null;
-            this.dtgMostrar.DataSource = clasificacion.listaEscalada;
-            ultimoBotonPresionado = TipoDeDeportista.Escalada;
 
+            switch (this.deporteSeleccionado)
+            {
+                case EDeporte.Futbol:
+                    this.dtgMostrar.DataSource = this.tabla.ListaFutbol;
+                    break;
+                case EDeporte.Voley:
+                    this.dtgMostrar.DataSource = this.tabla.ListaVoley;
+                    break;
+                case EDeporte.Basquet:
+                    this.dtgMostrar.DataSource = this.tabla.ListaBasquet;
+                    break;
+
+            };
         }
 
-        private void btnAtletismo_Click(object sender, EventArgs e)
+
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            this.dtgMostrar.DataSource = null;
-            this.dtgMostrar.DataSource = clasificacion.listaAtletismo;
-            ultimoBotonPresionado = TipoDeDeportista.Atletismo;
+            switch (this.deporteSeleccionado)
+            {
+                case EDeporte.Futbol:
+                    this.tabla.ListaFutbol.Remove((Futbol)this.equipoSeleccionado);
+                    break;
+                case EDeporte.Voley:
+                    this.tabla.ListaVoley.Remove((Voley)this.equipoSeleccionado);
+                    break;
+                case EDeporte.Basquet:
+                    this.tabla.ListaBasquet.Remove((Basquet)this.equipoSeleccionado);
+                    break;
+
+            };
+
+            this.ActualizarDataGridView();
         }
 
-        private void btnVoley_Click(object sender, EventArgs e)
-        {
-            this.dataGrid.DataSource = null; 
-            this.dataGrid.DataSource = clasificacion.listaVoley;
-            ultimoBotonPresionado = TipoDeDeportista.Voley;
-        }*/
     }
+
 }

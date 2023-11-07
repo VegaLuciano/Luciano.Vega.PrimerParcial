@@ -34,7 +34,9 @@
             btnBasquet = new Button();
             btnFutbol = new Button();
             btnVoley = new Button();
-            btnMostrar = new Button();
+            btnMostrarVoley = new Button();
+            btnMostrarFutbol = new Button();
+            btnMostrarBasquet = new Button();
             pnlFormulario.SuspendLayout();
             SuspendLayout();
             // 
@@ -121,19 +123,47 @@
             btnVoley.UseVisualStyleBackColor = false;
             btnVoley.Click += btnVoley_Click;
             // 
-            // btnMostrar
+            // btnMostrarVoley
             // 
-            btnMostrar.BackColor = Color.DarkSlateBlue;
-            btnMostrar.FlatAppearance.BorderColor = SystemColors.ButtonFace;
-            btnMostrar.FlatStyle = FlatStyle.Flat;
-            btnMostrar.ForeColor = SystemColors.ActiveCaptionText;
-            btnMostrar.Location = new Point(12, 123);
-            btnMostrar.Name = "btnMostrar";
-            btnMostrar.Size = new Size(140, 32);
-            btnMostrar.TabIndex = 3;
-            btnMostrar.Text = "Mostrar";
-            btnMostrar.UseVisualStyleBackColor = false;
-            btnMostrar.Click += btnMostrar_Click;
+            btnMostrarVoley.BackColor = Color.DarkSlateBlue;
+            btnMostrarVoley.FlatAppearance.BorderColor = SystemColors.ButtonFace;
+            btnMostrarVoley.FlatStyle = FlatStyle.Flat;
+            btnMostrarVoley.ForeColor = SystemColors.ActiveCaptionText;
+            btnMostrarVoley.Location = new Point(12, 123);
+            btnMostrarVoley.Name = "btnMostrarVoley";
+            btnMostrarVoley.Size = new Size(140, 32);
+            btnMostrarVoley.TabIndex = 3;
+            btnMostrarVoley.Text = "Mostrar Voley";
+            btnMostrarVoley.UseVisualStyleBackColor = false;
+            btnMostrarVoley.Click += btnMostrarVoley_Click;
+            // 
+            // btnMostrarFutbol
+            // 
+            btnMostrarFutbol.BackColor = Color.DarkSlateBlue;
+            btnMostrarFutbol.FlatAppearance.BorderColor = SystemColors.ButtonFace;
+            btnMostrarFutbol.FlatStyle = FlatStyle.Flat;
+            btnMostrarFutbol.ForeColor = SystemColors.ActiveCaptionText;
+            btnMostrarFutbol.Location = new Point(12, 161);
+            btnMostrarFutbol.Name = "btnMostrarFutbol";
+            btnMostrarFutbol.Size = new Size(140, 32);
+            btnMostrarFutbol.TabIndex = 4;
+            btnMostrarFutbol.Text = "Mostrar Futbol";
+            btnMostrarFutbol.UseVisualStyleBackColor = false;
+            btnMostrarFutbol.Click += btnMostrarFutbol_Click;
+            // 
+            // btnMostrarBasquet
+            // 
+            btnMostrarBasquet.BackColor = Color.DarkSlateBlue;
+            btnMostrarBasquet.FlatAppearance.BorderColor = SystemColors.ButtonFace;
+            btnMostrarBasquet.FlatStyle = FlatStyle.Flat;
+            btnMostrarBasquet.ForeColor = SystemColors.ActiveCaptionText;
+            btnMostrarBasquet.Location = new Point(12, 199);
+            btnMostrarBasquet.Name = "btnMostrarBasquet";
+            btnMostrarBasquet.Size = new Size(140, 32);
+            btnMostrarBasquet.TabIndex = 5;
+            btnMostrarBasquet.Text = "Mostrar Basquet";
+            btnMostrarBasquet.UseVisualStyleBackColor = false;
+            btnMostrarBasquet.Click += btnMostrarBasquet_Click;
             // 
             // FrmMenuPrincipal
             // 
@@ -141,7 +171,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateBlue;
             ClientSize = new Size(1080, 513);
-            Controls.Add(btnMostrar);
+            Controls.Add(btnMostrarBasquet);
+            Controls.Add(btnMostrarFutbol);
+            Controls.Add(btnMostrarVoley);
             Controls.Add(pnlFormulario);
             Controls.Add(lblUsuario);
             Controls.Add(btnAgregar);
@@ -162,6 +194,8 @@
         private Button btnFutbol;
         private Button btnVoley;
         private Button btnBasquet;
-        private Button btnMostrar;
+        private Button btnMostrarVoley;
+        private Button btnMostrarFutbol;
+        private Button btnMostrarBasquet;
     }
 }

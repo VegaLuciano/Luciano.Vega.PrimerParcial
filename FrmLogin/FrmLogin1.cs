@@ -51,7 +51,7 @@ namespace FrmLogin
                 this.usuario = this.usuariosRegistrados[indexUser];
                 FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal(this.usuariosRegistrados, this.usuario);
                 frmMenuPrincipal.ShowDialog();
-                this.Hide();
+                this.Visible = false;
 
                 if (frmMenuPrincipal.DialogResult == DialogResult.OK)
                 {

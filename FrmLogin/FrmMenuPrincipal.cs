@@ -112,6 +112,8 @@ namespace Forms
         {
 
         }
+
+
         private void AbrirFormularioHijo(Form formularioHijo)
         {
 
@@ -134,9 +136,21 @@ namespace Forms
 
         }
 
-        private void btnMostrar_Click(object sender, EventArgs e)
+        private void btnMostrarVoley_Click(object sender, EventArgs e)
         {
-            FrmMostrar1 frmMostrar = new FrmMostrar1(this.tabla);
+            FrmMostrar1 frmMostrar = new FrmMostrar1(this.tabla, EDeporte.Voley);
+            AbrirFormularioHijo(frmMostrar);
+        }
+
+        private void btnMostrarFutbol_Click(object sender, EventArgs e)
+        {
+            FrmMostrar1 frmMostrar = new FrmMostrar1(this.tabla, EDeporte.Futbol);
+            AbrirFormularioHijo(frmMostrar);
+        }
+
+        private void btnMostrarBasquet_Click(object sender, EventArgs e)
+        {
+            FrmMostrar1 frmMostrar = new FrmMostrar1(this.tabla, EDeporte.Basquet);
             AbrirFormularioHijo(frmMostrar);
         }
     }
