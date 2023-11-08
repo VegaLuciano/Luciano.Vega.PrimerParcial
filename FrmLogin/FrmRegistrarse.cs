@@ -19,6 +19,7 @@ namespace Forms
             this.lblErrorEmail.Text = string.Empty;
             this.lblErrorNombre.Text = string.Empty;
             this.lblErrorRepContraseña.Text = string.Empty;
+            FrmMenuPrincipal.CambiarColoresControles(this.Controls, this, true);
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)

@@ -34,16 +34,20 @@ namespace Forms
 
         private void FrmMostrar1_Load(object sender, EventArgs e)
         {
+            FrmMenuPrincipal.CambiarColoresControles(this.Controls, this, true);
             switch (deporteSeleccionado)
             {
                 case EDeporte.Futbol:
                     this.dtgMostrar.DataSource = this.tabla.ListaFutbol;
+                    ActualizarDataGridView();
                     break;
                 case EDeporte.Basquet:
                     this.dtgMostrar.DataSource = this.tabla.ListaBasquet;
+                    ActualizarDataGridView();
                     break;
                 case EDeporte.Voley:
                     this.dtgMostrar.DataSource = this.tabla.ListaVoley;
+                    ActualizarDataGridView();
                     break;
             };
         }
@@ -66,7 +70,6 @@ namespace Forms
 
             if (this.dtgMostrar.SelectedRows.Count > 0)
             {
-                // Obtén el índice de la fila seleccionada
                 int index = this.dtgMostrar.SelectedRows[0].Index;
 
                 if (index >= 0)
@@ -135,7 +138,7 @@ namespace Forms
                     frmFutbol.ShowDialog();
                     break;
                 case EDeporte.Voley:
-                    FrmVoley frmVoley = new FrmVoley(this.tabla, (Voley)this.equipoSeleccionado); 
+                    FrmVoley frmVoley = new FrmVoley(this.tabla, (Voley)this.equipoSeleccionado);
                     frmVoley.ShowDialog();
                     break;
                 case EDeporte.Basquet:
@@ -143,6 +146,53 @@ namespace Forms
                     frmBasquet.ShowDialog();
                     break;
             };
+        }
+
+        private void btnDescendiente_Click(object sender, EventArgs e)
+        {
+
+            this.tabla.ListaFutbol = Futbol.OrdenarPorNombre(this.tabla.ListaFutbol, false);
+            this.ActualizarDataGridView();
+
+            this.tabla.ListaVoley = Voley.OrdenarPorNombre(this.tabla.ListaVoley, false);
+            this.ActualizarDataGridView();
+
+            this.tabla.ListaBasquet = Basquet.OrdenarPorNombre(this.tabla.ListaBasquet, false);
+            this.ActualizarDataGridView();
+
+
+        }
+
+        private void btnAscendente_Click(object sender, EventArgs e)
+        {
+
+            this.tabla.ListaFutbol = Futbol.OrdenarPorNombre(this.tabla.ListaFutbol, true);
+            this.ActualizarDataGridView();
+
+
+            this.tabla.ListaVoley = Voley.OrdenarPorNombre(this.tabla.ListaVoley, true);
+            this.ActualizarDataGridView();
+
+
+            this.tabla.ListaBasquet = Basquet.OrdenarPorNombre(this.tabla.ListaBasquet, true);
+            this.ActualizarDataGridView();
+
+
+        }
+
+        private void btnPresentacion_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(this.equipoSeleccionado.PresentarFormacion());
+
+            this.ActualizarDataGridView();
+        }
+
+        private void btnAgregarJugador_Click(object sender, EventArgs e)
+        {
+            FrmJugador frmJugador = new FrmJugador(this.equipoSeleccionado);
+            frmJugador.ShowDialog();
+
+
         }
     }
 

@@ -15,7 +15,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Forms
 {
-    public abstract partial class FrmCRUD1 : Form
+    public partial class FrmCRUD1 : Form
     {
         public Tabla? tabla;
         public List<Jugador>? listJugadores;
@@ -36,7 +36,9 @@ namespace Forms
 
         protected void FrmCRUD_Load(object sender, EventArgs e)
         {
+            FrmMenuPrincipal.CambiarColoresControles(this.Controls, this, true);
             FrmCRUD1.ClearErrorLabels(this.Controls);
+           
         }
 
         protected void btnCargarPlanilla_Click(object sender, EventArgs e)
@@ -65,7 +67,6 @@ namespace Forms
                     this.npdCantJugadores.Enabled = false;
                     Equipo.ElegirTitulares(this.listJugadores, (int)this.npdCantTitulares.Value);
                     this.npdCantSuplentes.Value = this.listJugadores.Count - Equipo.ContarTitulares(this.listJugadores);
-                    MessageBox.Show($"{this.npdCantSuplentes.Value} suplentes");
                     this.npdCantSuplentes.Enabled = false;
                 }
             }
@@ -145,7 +146,6 @@ namespace Forms
             }
         }
 
-        protected abstract void SetearFormModificar();
         public bool FuncionContinuar()
         {
             bool allOk = true;
@@ -200,6 +200,7 @@ namespace Forms
                 {
                     Label errorLabel = (Label)control;
                     errorLabel.Text = string.Empty;
+                    errorLabel.ForeColor = Color.Red;
                 }
             }
         }

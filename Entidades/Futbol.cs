@@ -56,22 +56,44 @@ namespace Entidades
             return sb.ToString();
         }
 
-        public override string PresentarFormacion() 
+        public static List<Futbol> OrdenarPorNombre(List<Futbol> lista, bool ascendente)
+        {
+            if (ascendente)
+            {
+                return lista.OrderBy(equipo => equipo.Nombre).ToList();
+            }
+            else
+            {
+                return lista.OrderByDescending(equipo => equipo.Nombre).ToList();
+            }
+
+        }
+        public override string PresentarFormacion()
         {
             this.Formacion(this.cantTitulares);
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Titulares:");
-            /*foreach(Jugador jugador in this.titulares)
+            foreach (Jugador jugador in this.Jugadores)
             {
-                if (jugador == this.titulares[0])
-                    sb.Append($"{jugador.Nombre} - Capitan");
-                sb.AppendLine(jugador.Nombre);
+                Jugador capitan = new Jugador();
+                if (jugador == this.jugadores[0])
+                {
+                    capitan = jugador;
+                    sb.AppendLine($"{jugador.Nombre} - Capitan");
+                }
+                if (jugador.EsTitular == true && jugador !=  capitan)
+                {
+                    sb.AppendLine(jugador.Nombre);
+                }
             }
             sb.AppendLine("Suplentes:");
-            foreach (Jugador jugador in this.suplentes)
+            foreach (Jugador jugador in this.Jugadores)
             {
-                sb.AppendLine(jugador.Nombre);
-            }*/
+                if (jugador.EsTitular == false)
+                {
+                    sb.AppendLine(jugador.Nombre);
+                }
+            }
 
             return sb.ToString();
         }

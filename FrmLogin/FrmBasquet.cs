@@ -1,5 +1,6 @@
 ﻿using Entidades;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,7 @@ namespace Forms
             this.equipoModificar = equipo;
         }
 
-        protected override void SetearFormModificar()
+        protected void SetearFormModificar()
         {
             this.txtNombre.Text = this.equipoModificar.Nombre;
             this.txtNombreEntrenador.Text = this.equipoModificar.Entrenador;
@@ -39,10 +40,11 @@ namespace Forms
                 this.RdbSi.Checked = true;
             else
                 this.RdbSi.Checked = false;
+            this.listJugadores = equipoModificar.Jugadores;
         }
         private void FrmBasquet_Load(object sender, EventArgs e)
         {
-            if(seModifica)
+            if (seModifica)
                 this.SetearFormModificar();
         }
 
@@ -56,13 +58,27 @@ namespace Forms
                     {
                         Basquet EquipoBasquet = new Basquet(this.txtNombre.Text, (int)this.npdCantTitulares.Value, base.SetearCampoDivision(), this.txtNombreEntrenador.Text,
                             this.RdbSi.Checked, this.txtSponsor.Text, EDeporte.Basquet, (int)this.npdCantSuplentes.Value);
-
-                        this.tabla.ListaBasquet.Add(EquipoBasquet);
                         EquipoBasquet.Jugadores = this.listJugadores;
                         MessageBox.Show(EquipoBasquet.ToString());
                         MessageBox.Show("Se cargó todo exitosamente!");
                         this.lblErrorSponsor.Text = string.Empty;
                         this.lblErrorCmb.Text = string.Empty;
+
+                        if (seModifica == true)
+                        {
+                            int indice = this.tabla.ListaBasquet.IndexOf(this.equipoModificar);
+
+                            if (indice >= 0)
+                            {
+                                // Reemplaza el objeto en la misma posición.
+                                this.tabla.ListaBasquet[indice] = EquipoBasquet;
+                            }
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.tabla.ListaBasquet.Add(EquipoBasquet);
+                        }
                     }
                     else
                     {

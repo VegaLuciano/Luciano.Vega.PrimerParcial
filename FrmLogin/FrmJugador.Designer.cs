@@ -121,7 +121,7 @@
             // 
             cmbGenero.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             cmbGenero.FormattingEnabled = true;
-            cmbGenero.Location = new Point(362, 46);
+            cmbGenero.Location = new Point(292, 46);
             cmbGenero.Name = "cmbGenero";
             cmbGenero.Size = new Size(121, 28);
             cmbGenero.TabIndex = 6;
@@ -131,7 +131,7 @@
             lblErrorGenero.AutoSize = true;
             lblErrorGenero.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
             lblErrorGenero.ForeColor = Color.Red;
-            lblErrorGenero.Location = new Point(362, 76);
+            lblErrorGenero.Location = new Point(292, 76);
             lblErrorGenero.Name = "lblErrorGenero";
             lblErrorGenero.Size = new Size(68, 15);
             lblErrorGenero.TabIndex = 7;
@@ -141,7 +141,7 @@
             // 
             lblGenero.AutoSize = true;
             lblGenero.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblGenero.Location = new Point(362, 23);
+            lblGenero.Location = new Point(292, 23);
             lblGenero.Name = "lblGenero";
             lblGenero.Size = new Size(57, 20);
             lblGenero.TabIndex = 8;
@@ -210,7 +210,7 @@
             lblErrorAltura.AutoSize = true;
             lblErrorAltura.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
             lblErrorAltura.ForeColor = Color.Red;
-            lblErrorAltura.Location = new Point(362, 161);
+            lblErrorAltura.Location = new Point(292, 161);
             lblErrorAltura.Name = "lblErrorAltura";
             lblErrorAltura.Size = new Size(64, 15);
             lblErrorAltura.TabIndex = 17;
@@ -220,7 +220,7 @@
             // 
             lblAltura.AutoSize = true;
             lblAltura.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAltura.Location = new Point(362, 108);
+            lblAltura.Location = new Point(292, 108);
             lblAltura.Name = "lblAltura";
             lblAltura.Size = new Size(49, 20);
             lblAltura.TabIndex = 16;
@@ -229,7 +229,7 @@
             // txtAltura
             // 
             txtAltura.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAltura.Location = new Point(362, 131);
+            txtAltura.Location = new Point(292, 131);
             txtAltura.Name = "txtAltura";
             txtAltura.Size = new Size(161, 27);
             txtAltura.TabIndex = 15;
@@ -238,7 +238,7 @@
             // 
             lblDeporte.AutoSize = true;
             lblDeporte.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDeporte.Location = new Point(362, 194);
+            lblDeporte.Location = new Point(292, 194);
             lblDeporte.Name = "lblDeporte";
             lblDeporte.Size = new Size(64, 20);
             lblDeporte.TabIndex = 18;
@@ -248,7 +248,7 @@
             // 
             cmbDeporte.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             cmbDeporte.FormattingEnabled = true;
-            cmbDeporte.Location = new Point(362, 217);
+            cmbDeporte.Location = new Point(292, 217);
             cmbDeporte.Name = "cmbDeporte";
             cmbDeporte.Size = new Size(121, 28);
             cmbDeporte.TabIndex = 19;
@@ -258,7 +258,7 @@
             lblErrorDeporte.AutoSize = true;
             lblErrorDeporte.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
             lblErrorDeporte.ForeColor = Color.Red;
-            lblErrorDeporte.Location = new Point(362, 247);
+            lblErrorDeporte.Location = new Point(292, 247);
             lblErrorDeporte.Name = "lblErrorDeporte";
             lblErrorDeporte.RightToLeft = RightToLeft.Yes;
             lblErrorDeporte.Size = new Size(73, 15);
@@ -270,7 +270,7 @@
             lblErrorDivision.AutoSize = true;
             lblErrorDivision.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
             lblErrorDivision.ForeColor = Color.Red;
-            lblErrorDivision.Location = new Point(362, 330);
+            lblErrorDivision.Location = new Point(292, 330);
             lblErrorDivision.Name = "lblErrorDivision";
             lblErrorDivision.Size = new Size(73, 15);
             lblErrorDivision.TabIndex = 23;
@@ -280,7 +280,7 @@
             // 
             cmbDivision.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             cmbDivision.FormattingEnabled = true;
-            cmbDivision.Location = new Point(362, 300);
+            cmbDivision.Location = new Point(292, 300);
             cmbDivision.Name = "cmbDivision";
             cmbDivision.Size = new Size(121, 28);
             cmbDivision.TabIndex = 22;
@@ -289,7 +289,7 @@
             // 
             lblDivision.AutoSize = true;
             lblDivision.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDivision.Location = new Point(362, 277);
+            lblDivision.Location = new Point(292, 277);
             lblDivision.Name = "lblDivision";
             lblDivision.Size = new Size(62, 20);
             lblDivision.TabIndex = 21;
@@ -297,7 +297,7 @@
             // 
             // btnContinuar
             // 
-            btnContinuar.Location = new Point(362, 399);
+            btnContinuar.Location = new Point(292, 399);
             btnContinuar.Name = "btnContinuar";
             btnContinuar.Size = new Size(91, 29);
             btnContinuar.TabIndex = 24;
@@ -319,7 +319,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(590, 455);
+            ClientSize = new Size(566, 455);
             Controls.Add(btnCancelar);
             Controls.Add(btnContinuar);
             Controls.Add(lblErrorDivision);

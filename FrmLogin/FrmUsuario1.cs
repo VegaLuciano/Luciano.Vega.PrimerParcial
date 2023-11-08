@@ -24,10 +24,12 @@ namespace Forms
 
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
+            FrmMenuPrincipal.CambiarColoresControles(this.Controls, this, true);
             this.lblUsApellido.Text = this.usuario.Apellido;
             this.lblUsNombre.Text = this.usuario.Nombre;
             this.lblUsMail.Text = this.usuario.Mail;
             this.lblUsContraseña.Text = this.contraseñaOculta;
+          
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

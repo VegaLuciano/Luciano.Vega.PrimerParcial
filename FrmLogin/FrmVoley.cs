@@ -30,21 +30,22 @@ namespace Forms
         {
             this.cmbCancha.Items.AddRange(Enum.GetNames(typeof(ECancha)));
             if (seModifica == true)
-            { 
+            {
                 SetearFormModificar();
             }
         }
 
-        protected override void SetearFormModificar()
+        protected void SetearFormModificar()
         {
             this.txtNombre.Text = this.equipoModificar.Nombre;
             this.txtNombreEntrenador.Text = this.equipoModificar.Entrenador;
-            this.cmbDivision.SelectedItem = this.equipoModificar.Division;
+            this.cmbDivision.SelectedItem = this.equipoModificar.Division.ToString();
             this.npdCantJugadores.Value = this.equipoModificar.Jugadores.Count;
             this.npdCantSuplentes.Value = this.equipoModificar.CantSuplentes;
             this.npdCantTitulares.Value = this.equipoModificar.CantTitulares;
             this.cmbCancha.SelectedItem = this.equipoModificar.Cancha;
             this.txtSedeEquipo.Text = this.equipoModificar.SedeDelEquipo;
+            this.listJugadores = this.equipoModificar.Jugadores;
         }
 
         public ECancha SetearCampoCancha()
@@ -74,12 +75,26 @@ namespace Forms
                         Voley EquipoVoley = new Voley(this.txtNombre.Text, (int)this.npdCantTitulares.Value, base.SetearCampoDivision(), this.txtNombreEntrenador.Text,
                             SetearCampoCancha(), this.txtSedeEquipo.Text, EDeporte.Voley, (int)this.npdCantSuplentes.Value);
 
-                        this.tabla.ListaVoley.Add(EquipoVoley);
                         EquipoVoley.Jugadores = this.listJugadores;
                         MessageBox.Show(EquipoVoley.ToString());
                         MessageBox.Show("Se cargó todo exitosamente!");
                         this.lblErrorSede.Text = string.Empty;
                         this.lblErrorCancha.Text = string.Empty;
+                        if (seModifica == true)
+                        {
+                            int indice = this.tabla.ListaVoley.IndexOf(this.equipoModificar);
+
+                            if (indice >= 0)
+                            {
+                                // Reemplaza el objeto en la misma posición.
+                                this.tabla.ListaVoley[indice] = EquipoVoley;
+                            }
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.tabla.ListaVoley.Add(EquipoVoley);
+                        }
                     }
                     else
                     {

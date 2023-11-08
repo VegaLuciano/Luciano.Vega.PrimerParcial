@@ -23,13 +23,13 @@ namespace Forms
             this.equipoModificar = new Futbol();
         }
 
-        public FrmFutbol(Tabla listaEquipo, Futbol equipo) : this(listaEquipo) 
+        public FrmFutbol(Tabla listaEquipo, Futbol equipo) : this(listaEquipo)
         {
             this.seModifica = true;
-            this.equipoModificar = equipo;  
-        } 
+            this.equipoModificar = equipo;
+        }
 
-        protected override void SetearFormModificar()
+        protected void SetearFormModificar()
         {
             this.txtNombre.Text = this.equipoModificar.Nombre;
             this.txtNombreEntrenador.Text = this.equipoModificar.Entrenador;
@@ -37,7 +37,7 @@ namespace Forms
             this.npdCantJugadores.Value = this.equipoModificar.Jugadores.Count;
             this.npdCantSuplentes.Value = this.equipoModificar.CantSuplentes;
             this.npdCantTitulares.Value = this.equipoModificar.CantTitulares;
-            this.btnCamisetaLocal.BackColor= this.equipoModificar.ColorCamiseteLocal;
+            this.btnCamisetaLocal.BackColor = this.equipoModificar.ColorCamiseteLocal;
             this.btnVisitante.BackColor = this.equipoModificar.ColorCamisetaVisitante;
             this.listJugadores = equipoModificar.Jugadores;
         }
@@ -48,7 +48,7 @@ namespace Forms
 
             if (base.FuncionContinuar())
             {
-                if (this.colorLocal.Color != defaultBackColor )
+                if (this.colorLocal.Color != defaultBackColor)
                 {
 
                     if (this.colorVisitante.Color != defaultBackColor)
@@ -56,12 +56,26 @@ namespace Forms
 
                         Futbol EquipoFutbol = new Futbol(this.txtNombre.Text, (int)this.npdCantTitulares.Value, base.SetearCampoDivision(), this.txtNombreEntrenador.Text,
                             this.colorCamisetaLocal, this.colorCamisetaVisitante, EDeporte.Futbol, (int)this.npdCantSuplentes.Value);
-                        this.tabla.ListaFutbol.Add(EquipoFutbol);
                         EquipoFutbol.Jugadores = this.listJugadores;
                         MessageBox.Show(EquipoFutbol.ToString());
                         MessageBox.Show("Se cargó todo exitosamente!");
                         this.lblErrorLocal.Text = string.Empty;
                         this.lblErrorVisitante.Text = string.Empty;
+                        if (seModifica == true)
+                        {
+                            int indice = this.tabla.ListaFutbol.IndexOf(this.equipoModificar);
+
+                            if (indice >= 0)
+                            {
+                                // Reemplaza el objeto en la misma posición.
+                                this.tabla.ListaFutbol[indice] = EquipoFutbol;
+                            }
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.tabla.ListaFutbol.Add(EquipoFutbol);
+                        }
                     }
                     else
                     {

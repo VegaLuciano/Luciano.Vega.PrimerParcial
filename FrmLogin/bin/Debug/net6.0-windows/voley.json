@@ -32,7 +32,7 @@
         "Division": 3,
         "Deporte": 2,
         "Genero": 0,
-        "EsTitular": false
+        "EsTitular": true
       },
       {
         "Nombre": "Luisa",
@@ -43,7 +43,7 @@
         "Division": 3,
         "Deporte": 2,
         "Genero": 1,
-        "EsTitular": false
+        "EsTitular": true
       },
       {
         "Nombre": "Pedro",
@@ -54,7 +54,7 @@
         "Division": 3,
         "Deporte": 0,
         "Genero": 0,
-        "EsTitular": false
+        "EsTitular": true
       },
       {
         "Nombre": "Juanci",
@@ -109,7 +109,7 @@
         "Division": 3,
         "Deporte": 0,
         "Genero": 0,
-        "EsTitular": true
+        "EsTitular": false
       },
       {
         "Nombre": "Elena",
@@ -131,16 +131,194 @@
         "Division": 2,
         "Deporte": 2,
         "Genero": 0,
+        "EsTitular": false
+      }
+    ],
+    "Cancha": 1,
+    "SedeDelEquipo": "Wilde",
+    "Nombre": "Akila",
+    "Deporte": 2,
+    "CantTitulares": 7,
+    "CantSuplentes": 5,
+    "Division": 3,
+    "Entrenador": "Maria"
+  },
+  {
+    "Jugadores": [
+      {
+        "Nombre": "Laura",
+        "Apellido": "Fernández",
+        "Dni": 12345679,
+        "Edad": 26,
+        "Altura": 1.7,
+        "Division": 3,
+        "Deporte": 2,
+        "Genero": 1,
+        "EsTitular": true
+      },
+      {
+        "Nombre": "Martín",
+        "Apellido": "Gómez",
+        "Dni": 98765433,
+        "Edad": 27,
+        "Altura": 1.75,
+        "Division": 3,
+        "Deporte": 2,
+        "Genero": 0,
+        "EsTitular": true
+      },
+      {
+        "Nombre": "Valeria",
+        "Apellido": "Sánchez",
+        "Dni": 54321988,
+        "Edad": 24,
+        "Altura": 1.68,
+        "Division": 3,
+        "Deporte": 2,
+        "Genero": 1,
+        "EsTitular": true
+      },
+      {
+        "Nombre": "Miguel",
+        "Apellido": "Rodríguez",
+        "Dni": 87654322,
+        "Edad": 28,
+        "Altura": 1.8,
+        "Division": 3,
+        "Deporte": 2,
+        "Genero": 0,
+        "EsTitular": true
+      },
+      {
+        "Nombre": "Julieta",
+        "Apellido": "Martínez",
+        "Dni": 34567891,
+        "Edad": 29,
+        "Altura": 1.72,
+        "Division": 3,
+        "Deporte": 2,
+        "Genero": 1,
+        "EsTitular": true
+      },
+      {
+        "Nombre": "Alejandro",
+        "Apellido": "Pérez",
+        "Dni": 65432124,
+        "Edad": 30,
+        "Altura": 1.76,
+        "Division": 3,
+        "Deporte": 2,
+        "Genero": 0,
+        "EsTitular": false
+      },
+      {
+        "Nombre": "Carmen",
+        "Apellido": "González",
+        "Dni": 23456790,
+        "Edad": 31,
+        "Altura": 1.73,
+        "Division": 3,
+        "Deporte": 2,
+        "Genero": 1,
+        "EsTitular": true
+      }
+    ],
+    "Cancha": 1,
+    "SedeDelEquipo": "Quilmes",
+    "Nombre": "DobleToque",
+    "Deporte": 2,
+    "CantTitulares": 6,
+    "CantSuplentes": 1,
+    "Division": 2,
+    "Entrenador": "Monserrat"
+  },
+  {
+    "Jugadores": [
+      {
+        "Nombre": "Laura",
+        "Apellido": "Fernández",
+        "Dni": 12345679,
+        "Edad": 26,
+        "Altura": 1.7,
+        "Division": 3,
+        "Deporte": 2,
+        "Genero": 1,
+        "EsTitular": true
+      },
+      {
+        "Nombre": "Martín",
+        "Apellido": "Gómez",
+        "Dni": 98765433,
+        "Edad": 27,
+        "Altura": 1.75,
+        "Division": 3,
+        "Deporte": 2,
+        "Genero": 0,
+        "EsTitular": true
+      },
+      {
+        "Nombre": "Valeria",
+        "Apellido": "Sánchez",
+        "Dni": 54321988,
+        "Edad": 24,
+        "Altura": 1.68,
+        "Division": 3,
+        "Deporte": 2,
+        "Genero": 1,
+        "EsTitular": true
+      },
+      {
+        "Nombre": "Miguel",
+        "Apellido": "Rodríguez",
+        "Dni": 87654322,
+        "Edad": 28,
+        "Altura": 1.8,
+        "Division": 3,
+        "Deporte": 2,
+        "Genero": 0,
+        "EsTitular": true
+      },
+      {
+        "Nombre": "Julieta",
+        "Apellido": "Martínez",
+        "Dni": 34567891,
+        "Edad": 29,
+        "Altura": 1.72,
+        "Division": 3,
+        "Deporte": 2,
+        "Genero": 1,
+        "EsTitular": true
+      },
+      {
+        "Nombre": "Alejandro",
+        "Apellido": "Pérez",
+        "Dni": 65432124,
+        "Edad": 30,
+        "Altura": 1.76,
+        "Division": 3,
+        "Deporte": 2,
+        "Genero": 0,
+        "EsTitular": false
+      },
+      {
+        "Nombre": "Carmen",
+        "Apellido": "González",
+        "Dni": 23456790,
+        "Edad": 31,
+        "Altura": 1.73,
+        "Division": 3,
+        "Deporte": 2,
+        "Genero": 1,
         "EsTitular": true
       }
     ],
     "Cancha": 0,
-    "SedeDelEquipo": "jUJUY",
-    "Nombre": "wiki",
+    "SedeDelEquipo": "Quilmes",
+    "Nombre": "Rompecejas",
     "Deporte": 2,
     "CantTitulares": 6,
-    "CantSuplentes": 6,
+    "CantSuplentes": 1,
     "Division": 0,
-    "Entrenador": "Marquitos"
+    "Entrenador": "Lilia"
   }
 ]

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,25 +13,24 @@ using Tools;
 
 namespace Forms
 {
-    public partial class FrmJugador: Form
+    public partial class FrmJugador : Form
     {
         public Jugador Jugador;
         public Equipo equipo;
         private int index;
         private bool seModifica;
 
-        public FrmJugador(Jugador jugador, Equipo equipo)
+        public FrmJugador(Equipo equipo)
         {
-            this.Jugador = jugador;
-            InitializeComponent();
+            this.Jugador = new Jugador();
             this.equipo = equipo;
             this.seModifica = false;
         }
-        public FrmJugador(Jugador jugador, Equipo equipo, int index)
+
+        public FrmJugador(Jugador jugador, Equipo equipo, int index) : this(equipo)
         {
             this.Jugador = jugador;
             InitializeComponent();
-            this.equipo = equipo;
             this.index = index;
             this.seModifica = true;
         }
@@ -39,6 +39,7 @@ namespace Forms
         {
             FrmCRUD1.ClearErrorLabels(this.Controls);
             this.SetearCampoDeporte();
+            FrmMenuPrincipal.CambiarColoresControles(this.Controls, this, true);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -108,7 +109,10 @@ namespace Forms
 
             if (allOk)
             {
-                //this.equipo.Jugadores.Add();
+                this.Jugador = new Jugador(this.txtNombre.Text, this.txtApellido.Text, (int)this.npdEdad.Value, int.Parse(this.txtAltura.Text), (int)this.npdDni.Value,
+                    (EDivisiones)this.cmbDivision.SelectedItem, (EGenero)this.cmbGenero.SelectedItem, false, (EDeporte)this.cmbDeporte.SelectedItem);
+
+                this.equipo.Jugadores.Add(this.Jugador);
                 DialogResult = DialogResult.OK;
             }
         }

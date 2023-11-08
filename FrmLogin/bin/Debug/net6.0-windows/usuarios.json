@@ -26,5 +26,12 @@
     "Apellido": "Parker",
     "Mail": "spiderman@parcial.com",
     "Contraseña": "Password_1"
+  },
+  {
+    "Id": "5",
+    "Nombre": "Prueba",
+    "Apellido": "Prueba",
+    "Mail": "prueba@parcial.com",
+    "Contraseña": "1234567A."
   }
 ]

@@ -105,13 +105,14 @@ namespace Entidades
             {
                 equipo.jugadores.Add(jugador);
             }
-            else 
+            else
             {
                 equipo.jugadores[equipo.jugadores.IndexOf(jugador)] = jugador;
             }
-            
+
             return equipo;
         }
+
         public static Equipo operator -(Equipo equipo, Jugador jugador)
         {
             if (equipo.jugadores.IndexOf(jugador) != -1)

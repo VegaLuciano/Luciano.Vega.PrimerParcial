@@ -20,7 +20,7 @@ namespace FrmLogin
         {
             this.lblError.Text = string.Empty;
             this.CargarUsuarios();
-
+            FrmMenuPrincipal.CambiarColoresControles(this.Controls, this, true);
         }
 
 
@@ -49,7 +49,7 @@ namespace FrmLogin
             if (indexUser != -1)
             {
                 this.usuario = this.usuariosRegistrados[indexUser];
-                FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal(this.usuariosRegistrados, this.usuario);
+                FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal(this.usuariosRegistrados, this.usuario, this.pathUsuariosRegistrados);
                 frmMenuPrincipal.ShowDialog();
                 this.Visible = false;
 

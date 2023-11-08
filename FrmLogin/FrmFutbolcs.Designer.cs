@@ -39,44 +39,126 @@
             ((System.ComponentModel.ISupportInitialize)npdCantSuplentes).BeginInit();
             SuspendLayout();
             // 
+            // txtNombre
+            // 
+            txtNombre.BorderStyle = BorderStyle.FixedSingle;
+            txtNombre.Location = new Point(268, 60);
+            // 
+            // lblNombre
+            // 
+            lblNombre.BackColor = Color.DarkGray;
+            lblNombre.ForeColor = Color.White;
+            lblNombre.Location = new Point(268, 37);
+            // 
             // lblErrorNombre
             // 
+            lblErrorNombre.BackColor = Color.DarkGray;
+            lblErrorNombre.Location = new Point(268, 84);
             lblErrorNombre.Size = new Size(63, 13);
             lblErrorNombre.Text = "ErroNombre";
             // 
+            // lblDivision
+            // 
+            lblDivision.BackColor = Color.DarkGray;
+            lblDivision.ForeColor = Color.White;
+            lblDivision.Location = new Point(272, 126);
+            // 
+            // cmbDivision
+            // 
+            cmbDivision.Items.AddRange(new object[] { "Sub16", "Sub18", "Sub21", "Mayores", "Sub16", "Sub18", "Sub21", "Mayores" });
+            cmbDivision.Location = new Point(270, 142);
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.DarkGray;
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(466, 40);
+            // 
+            // txtNombreEntrenador
+            // 
+            txtNombreEntrenador.BorderStyle = BorderStyle.FixedSingle;
+            txtNombreEntrenador.Location = new Point(466, 58);
+            // 
             // lblErrorNombreEntrenador
             // 
+            lblErrorNombreEntrenador.BackColor = Color.DarkGray;
+            lblErrorNombreEntrenador.Location = new Point(466, 82);
             lblErrorNombreEntrenador.Size = new Size(118, 13);
             lblErrorNombreEntrenador.Text = "ErrorNombreEntrenador";
             // 
+            // npdCantJugadores
+            // 
+            npdCantJugadores.Location = new Point(96, 68);
+            // 
+            // lblCantJugadores
+            // 
+            lblCantJugadores.BackColor = Color.DarkGray;
+            lblCantJugadores.ForeColor = Color.White;
+            lblCantJugadores.Location = new Point(96, 45);
+            // 
+            // lblCantTitulares
+            // 
+            lblCantTitulares.BackColor = Color.DarkGray;
+            lblCantTitulares.ForeColor = Color.White;
+            lblCantTitulares.Location = new Point(96, 97);
+            // 
+            // npdCantTitulares
+            // 
+            npdCantTitulares.Location = new Point(96, 120);
+            // 
+            // npdCantSuplentes
+            // 
+            npdCantSuplentes.Location = new Point(96, 173);
+            // 
+            // lblCanSuplentes
+            // 
+            lblCanSuplentes.BackColor = Color.DarkGray;
+            lblCanSuplentes.ForeColor = Color.White;
+            lblCanSuplentes.Location = new Point(96, 150);
+            // 
             // btnCargarPlanilla
             // 
+            btnCargarPlanilla.BackColor = Color.CornflowerBlue;
             btnCargarPlanilla.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCargarPlanilla.Location = new Point(445, 241);
+            btnCargarPlanilla.ForeColor = Color.Black;
+            btnCargarPlanilla.Location = new Point(468, 142);
             btnCargarPlanilla.Size = new Size(109, 23);
+            btnCargarPlanilla.UseVisualStyleBackColor = false;
             // 
             // lblErrorCargarPlanilla
             // 
-            lblErrorCargarPlanilla.Location = new Point(445, 269);
+            lblErrorCargarPlanilla.BackColor = Color.DarkGray;
+            lblErrorCargarPlanilla.Location = new Point(468, 170);
             lblErrorCargarPlanilla.Size = new Size(62, 13);
             lblErrorCargarPlanilla.Text = "ErrorPlanilla";
             // 
             // lblErrorCantidades
             // 
+            lblErrorCantidades.BackColor = Color.DarkGray;
+            lblErrorCantidades.Location = new Point(96, 197);
             lblErrorCantidades.Size = new Size(82, 13);
             lblErrorCantidades.Text = "ErrorCantidades";
             // 
             // btnContinuar
             // 
-            btnContinuar.Location = new Point(445, 295);
+            btnContinuar.BackColor = Color.CornflowerBlue;
+            btnContinuar.ForeColor = Color.Black;
+            btnContinuar.Location = new Point(475, 317);
+            btnContinuar.UseVisualStyleBackColor = false;
             btnContinuar.Click += btnContinuar_Click_1;
             // 
             // btnCancelar
             // 
+            btnCancelar.BackColor = Color.CornflowerBlue;
+            btnCancelar.ForeColor = Color.Black;
+            btnCancelar.Location = new Point(268, 317);
+            btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click_1;
             // 
             // lblErrorCmb
             // 
+            lblErrorCmb.BackColor = Color.DarkGray;
+            lblErrorCmb.Location = new Point(270, 168);
             lblErrorCmb.Size = new Size(66, 13);
             lblErrorCmb.Text = "ErrorNombre";
             // 
@@ -88,7 +170,7 @@
             // btnCamisetaLocal
             // 
             btnCamisetaLocal.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCamisetaLocal.Location = new Point(290, 38);
+            btnCamisetaLocal.Location = new Point(268, 226);
             btnCamisetaLocal.Name = "btnCamisetaLocal";
             btnCamisetaLocal.Size = new Size(160, 23);
             btnCamisetaLocal.TabIndex = 22;
@@ -99,9 +181,9 @@
             // btnVisitante
             // 
             btnVisitante.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnVisitante.Location = new Point(290, 115);
+            btnVisitante.Location = new Point(466, 226);
             btnVisitante.Name = "btnVisitante";
-            btnVisitante.Size = new Size(160, 28);
+            btnVisitante.Size = new Size(160, 23);
             btnVisitante.TabIndex = 23;
             btnVisitante.Text = "Seleccionar color visitante";
             btnVisitante.UseVisualStyleBackColor = true;
@@ -112,7 +194,7 @@
             lblErrorLocal.AutoSize = true;
             lblErrorLocal.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorLocal.ForeColor = Color.Red;
-            lblErrorLocal.Location = new Point(290, 64);
+            lblErrorLocal.Location = new Point(268, 252);
             lblErrorLocal.Name = "lblErrorLocal";
             lblErrorLocal.Size = new Size(55, 13);
             lblErrorLocal.TabIndex = 24;
@@ -123,7 +205,7 @@
             lblErrorVisitante.AutoSize = true;
             lblErrorVisitante.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorVisitante.ForeColor = Color.Red;
-            lblErrorVisitante.Location = new Point(290, 146);
+            lblErrorVisitante.Location = new Point(466, 257);
             lblErrorVisitante.Name = "lblErrorVisitante";
             lblErrorVisitante.Size = new Size(69, 13);
             lblErrorVisitante.TabIndex = 25;

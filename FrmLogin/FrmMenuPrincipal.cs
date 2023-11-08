@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tools;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Forms
 {
@@ -19,17 +20,23 @@ namespace Forms
         private DateTime fecha;
         private string pathUsuarios;
         private string pathEquiposVoley;
+        private string pathEquiposFutbol;
+        private string pathEquiposBasquet;
+        private string pathUsuariosRegistrados;
         private Form? formularioAcutal = null;
         public Tabla tabla;
 
-        public FrmMenuPrincipal(List<Usuario> listaUsuarios, Usuario usuario)
+        public FrmMenuPrincipal(List<Usuario> listaUsuarios, Usuario usuario, string pathUsuariosRegistrados)
         {
             InitializeComponent();
+            this.pathUsuariosRegistrados = pathUsuariosRegistrados;
             this.listaUsuarios = listaUsuarios;
             this.usuario = usuario;
             this.fecha = DateTime.Now;
             this.pathUsuarios = "usuarios.log";
             this.pathEquiposVoley = "voley.json";
+            this.pathEquiposFutbol = "futbol.json";
+            this.pathEquiposBasquet = "basquet.json";
             this.lblUsuario.Text = this.usuario.Nombre;
             this.btnFutbol.Enabled = false;
             this.btnFutbol.Visible = false;
@@ -53,23 +60,40 @@ namespace Forms
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
             this.CargarArchivos();
+            FrmMenuPrincipal.CambiarColoresControles(this.Controls, this, false);
+            
         }
 
         private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.GuardarArhivos();
             this.DialogResult = DialogResult.OK;
+            if (MessageBox.Show("¿Estás seguro de que deseas cerrar el formulario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
 
         private void CargarArchivos()
         {
-            List<Voley>? listAux = Archivo.LeerArchivoJson<Voley>(this.pathEquiposVoley);
+            List<Voley>? listVoley = Archivo.LeerArchivoJson<Voley>(this.pathEquiposVoley);
 
-            if (listAux != null)
+            if (listVoley != null)
             {
-                this.tabla.ListaVoley = listAux;
+                this.tabla.ListaVoley = listVoley;
             }
+            List<Futbol>? listFutbol = Archivo.LeerArchivoJson<Futbol>(this.pathEquiposFutbol);
 
+            if (listFutbol != null)
+            {
+                this.tabla.ListaFutbol = listFutbol;
+            }
+            List<Basquet>? listBasquet = Archivo.LeerArchivoJson<Basquet>(this.pathEquiposBasquet);
+
+            if (listBasquet != null)
+            {
+                this.tabla.ListaBasquet = listBasquet;
+            }
         }
 
         private void GuardarArhivos()
@@ -80,7 +104,10 @@ namespace Forms
                 sw.WriteLine("  " + fecha.ToString("yyyy-MM-dd HH:mm:ss"));
             }
 
+            Archivo.GuardarArchivoJson(this.pathUsuariosRegistrados, this.listaUsuarios);
             Archivo.GuardarArchivoJson(this.pathEquiposVoley, this.tabla.ListaVoley);
+            Archivo.GuardarArchivoJson(this.pathEquiposBasquet, this.tabla.ListaBasquet);
+            Archivo.GuardarArchivoJson(this.pathEquiposFutbol, this.tabla.ListaFutbol);
         }
 
         private void lblUsuario_Click_1(object sender, EventArgs e)
@@ -153,5 +180,47 @@ namespace Forms
             FrmMostrar1 frmMostrar = new FrmMostrar1(this.tabla, EDeporte.Basquet);
             AbrirFormularioHijo(frmMostrar);
         }
+
+        public static void CambiarColoresControles(Control.ControlCollection controles, Form form, bool esHijo)
+        {
+            Color colorLabel = new Color();
+            if (esHijo)
+            {
+                form.BackColor = Color.DarkGray;
+                colorLabel = Color.DarkGray;
+            }
+            else 
+            {
+                form.BackColor = Color.DarkSlateGray;
+                colorLabel = Color.DarkSlateGray;
+            }
+
+            foreach (Control control in controles)
+            {
+                if (control is System.Windows.Forms.Button)
+                {
+                    control.BackColor = Color.CornflowerBlue; 
+                    control.ForeColor = Color.Black; 
+                }
+                else if (control is Panel)
+                {
+                    control.BackColor = Color.LightSlateGray; 
+                    control.ForeColor = Color.Black; 
+                }
+                else if (control is System.Windows.Forms.TextBox)
+                {
+
+                    System.Windows.Forms.TextBox textBox = (System.Windows.Forms.TextBox)control;
+                    textBox.BorderStyle = BorderStyle.FixedSingle;
+                }
+                else if (control is Label)
+                {
+                    control.BackColor = colorLabel; 
+                    control.ForeColor = Color.White; 
+                }
+            }
+
+        }
+
     }
 }

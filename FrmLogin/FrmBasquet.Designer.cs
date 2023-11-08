@@ -41,44 +41,128 @@
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
+            // txtNombre
+            // 
+            txtNombre.BorderStyle = BorderStyle.FixedSingle;
+            txtNombre.Location = new Point(242, 38);
+            // 
+            // lblNombre
+            // 
+            lblNombre.BackColor = Color.DarkGray;
+            lblNombre.ForeColor = Color.White;
+            lblNombre.Location = new Point(242, 15);
+            // 
             // lblErrorNombre
             // 
+            lblErrorNombre.BackColor = Color.DarkGray;
+            lblErrorNombre.Location = new Point(242, 62);
             lblErrorNombre.Size = new Size(66, 13);
             lblErrorNombre.Text = "ErrorNombre";
             // 
+            // lblDivision
+            // 
+            lblDivision.BackColor = Color.DarkGray;
+            lblDivision.ForeColor = Color.White;
+            lblDivision.Location = new Point(242, 123);
+            // 
+            // cmbDivision
+            // 
+            cmbDivision.Location = new Point(242, 141);
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.DarkGray;
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(435, 20);
+            // 
+            // txtNombreEntrenador
+            // 
+            txtNombreEntrenador.BorderStyle = BorderStyle.FixedSingle;
+            txtNombreEntrenador.Location = new Point(435, 38);
+            // 
             // lblErrorNombreEntrenador
             // 
+            lblErrorNombreEntrenador.BackColor = Color.DarkGray;
+            lblErrorNombreEntrenador.Location = new Point(435, 62);
             lblErrorNombreEntrenador.Size = new Size(66, 13);
             lblErrorNombreEntrenador.Text = "ErrorApellido";
             // 
+            // npdCantJugadores
+            // 
+            npdCantJugadores.Location = new Point(73, 38);
+            // 
+            // lblCantJugadores
+            // 
+            lblCantJugadores.BackColor = Color.DarkGray;
+            lblCantJugadores.ForeColor = Color.White;
+            lblCantJugadores.Location = new Point(73, 15);
+            // 
+            // lblCantTitulares
+            // 
+            lblCantTitulares.BackColor = Color.DarkGray;
+            lblCantTitulares.ForeColor = Color.White;
+            lblCantTitulares.Location = new Point(73, 67);
+            // 
+            // npdCantTitulares
+            // 
+            npdCantTitulares.Location = new Point(73, 90);
+            // 
+            // npdCantSuplentes
+            // 
+            npdCantSuplentes.Location = new Point(73, 143);
+            // 
+            // lblCanSuplentes
+            // 
+            lblCanSuplentes.BackColor = Color.DarkGray;
+            lblCanSuplentes.ForeColor = Color.White;
+            lblCanSuplentes.Location = new Point(73, 120);
+            // 
             // btnCargarPlanilla
             // 
-            btnCargarPlanilla.Location = new Point(485, 235);
+            btnCargarPlanilla.BackColor = Color.CornflowerBlue;
+            btnCargarPlanilla.ForeColor = Color.Black;
+            btnCargarPlanilla.Location = new Point(242, 218);
+            btnCargarPlanilla.UseVisualStyleBackColor = false;
             // 
             // lblErrorCargarPlanilla
             // 
-            lblErrorCargarPlanilla.Location = new Point(485, 271);
+            lblErrorCargarPlanilla.BackColor = Color.DarkGray;
+            lblErrorCargarPlanilla.Location = new Point(242, 254);
             lblErrorCargarPlanilla.Size = new Size(65, 13);
             lblErrorCargarPlanilla.Text = "ErrorPlantilla";
             // 
             // lblErrorCantidades
             // 
+            lblErrorCantidades.BackColor = Color.DarkGray;
+            lblErrorCantidades.Location = new Point(73, 167);
             lblErrorCantidades.Size = new Size(82, 13);
             lblErrorCantidades.Text = "ErrorCantidades";
             // 
             // btnContinuar
             // 
-            btnContinuar.Location = new Point(485, 295);
+            btnContinuar.BackColor = Color.CornflowerBlue;
+            btnContinuar.ForeColor = Color.Black;
+            btnContinuar.Location = new Point(485, 364);
+            btnContinuar.UseVisualStyleBackColor = false;
             btnContinuar.Click += btnContinuar_Click_1;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.BackColor = Color.CornflowerBlue;
+            btnCancelar.ForeColor = Color.Black;
+            btnCancelar.Location = new Point(242, 364);
+            btnCancelar.UseVisualStyleBackColor = false;
             // 
             // lblErrorCmb
             // 
+            lblErrorCmb.BackColor = Color.DarkGray;
+            lblErrorCmb.Location = new Point(242, 167);
             lblErrorCmb.Size = new Size(66, 13);
             lblErrorCmb.Text = "ErrorDivision";
             // 
             // txtSponsor
             // 
-            txtSponsor.Location = new Point(270, 36);
+            txtSponsor.Location = new Point(435, 141);
             txtSponsor.Name = "txtSponsor";
             txtSponsor.Size = new Size(170, 23);
             txtSponsor.TabIndex = 22;
@@ -86,7 +170,7 @@
             // lblSponsor
             // 
             lblSponsor.AutoSize = true;
-            lblSponsor.Location = new Point(270, 15);
+            lblSponsor.Location = new Point(435, 120);
             lblSponsor.Name = "lblSponsor";
             lblSponsor.Size = new Size(50, 15);
             lblSponsor.TabIndex = 23;
@@ -97,7 +181,7 @@
             lblErrorSponsor.AutoSize = true;
             lblErrorSponsor.Font = new Font("Segoe UI", 8.25F, FontStyle.Italic, GraphicsUnit.Point);
             lblErrorSponsor.ForeColor = Color.Red;
-            lblErrorSponsor.Location = new Point(270, 62);
+            lblErrorSponsor.Location = new Point(435, 167);
             lblErrorSponsor.Name = "lblErrorSponsor";
             lblErrorSponsor.Size = new Size(67, 13);
             lblErrorSponsor.TabIndex = 24;
@@ -107,7 +191,7 @@
             // 
             groupBox1.Controls.Add(rdbNo);
             groupBox1.Controls.Add(RdbSi);
-            groupBox1.Location = new Point(270, 98);
+            groupBox1.Location = new Point(435, 203);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(144, 84);
             groupBox1.TabIndex = 26;
@@ -141,7 +225,7 @@
             lblErrorEquipoMedico.AutoSize = true;
             lblErrorEquipoMedico.Font = new Font("Segoe UI", 8.25F, FontStyle.Italic, GraphicsUnit.Point);
             lblErrorEquipoMedico.ForeColor = Color.Red;
-            lblErrorEquipoMedico.Location = new Point(270, 185);
+            lblErrorEquipoMedico.Location = new Point(450, 254);
             lblErrorEquipoMedico.Name = "lblErrorEquipoMedico";
             lblErrorEquipoMedico.Size = new Size(67, 13);
             lblErrorEquipoMedico.TabIndex = 27;
