@@ -24,12 +24,12 @@ La aplicación "Administrador de Equipos" te permite realizar las siguientes ope
 
 ¡Eso es! Espero que encuentres esta aplicación útil y fácil de usar para administrar información de equipos de baloncesto.
 
-## Diagrama de Clases
-
-A continuación, se muestra el diagrama de clases correspondiente a la lógica de negocio de la aplicación:
-
-
+(Nota) Puede apretar en el nombre del usuario en el usuario principal para poder ver sus datos.
 
 El diagrama de clases se ha generado utilizando la herramienta de Visual Studio y está actualizado según la última versión de la solución.
 
 ¡Gracias por usar esta aplicación y no dudes en contactarme si tienes alguna pregunta o sugerencia!
+
+## Diagrama de Clases
+
+A continuación, se muestra el diagrama de clases correspondiente a la lógica de negocio de la aplicación:
