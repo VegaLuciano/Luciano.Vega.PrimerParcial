@@ -31,6 +31,7 @@
             dtgMostrar = new DataGridView();
             btnJugadores = new Button();
             btnEliminar = new Button();
+            btnModificar = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgMostrar).BeginInit();
             SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             btnJugadores.FlatStyle = FlatStyle.Flat;
             btnJugadores.ForeColor = SystemColors.ActiveCaptionText;
             btnJugadores.ImageAlign = ContentAlignment.BottomCenter;
-            btnJugadores.Location = new Point(46, 421);
+            btnJugadores.Location = new Point(31, 409);
             btnJugadores.Name = "btnJugadores";
             btnJugadores.Size = new Size(140, 27);
             btnJugadores.TabIndex = 7;
@@ -72,7 +73,7 @@
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.ForeColor = SystemColors.ActiveCaptionText;
             btnEliminar.ImageAlign = ContentAlignment.BottomCenter;
-            btnEliminar.Location = new Point(243, 421);
+            btnEliminar.Location = new Point(199, 409);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(140, 27);
             btnEliminar.TabIndex = 8;
@@ -81,12 +82,30 @@
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
+            // btnModificar
+            // 
+            btnModificar.BackColor = Color.SlateBlue;
+            btnModificar.Cursor = Cursors.No;
+            btnModificar.FlatAppearance.BorderColor = Color.DarkSlateBlue;
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.ForeColor = SystemColors.ActiveCaptionText;
+            btnModificar.ImageAlign = ContentAlignment.BottomCenter;
+            btnModificar.Location = new Point(386, 409);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(140, 27);
+            btnModificar.TabIndex = 9;
+            btnModificar.Text = "Modificar";
+            btnModificar.TextAlign = ContentAlignment.BottomCenter;
+            btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
+            // 
             // FrmMostrar1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(880, 460);
+            Controls.Add(btnModificar);
             Controls.Add(btnEliminar);
             Controls.Add(btnJugadores);
             Controls.Add(dtgMostrar);
@@ -102,5 +121,6 @@
         private DataGridView dtgMostrar;
         private Button btnJugadores;
         private Button btnEliminar;
+        private Button btnModificar;
     }
 }

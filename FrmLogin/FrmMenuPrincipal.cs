@@ -91,20 +91,20 @@ namespace Forms
 
         private void btnVoley_Click(object sender, EventArgs e)
         {
-            FrmVoley frmVoley = new FrmVoley(this.tabla, this.usuario);
+            FrmVoley frmVoley = new FrmVoley(this.tabla);
             AbrirFormularioHijo(frmVoley);
 
         }
 
         private void btnFutbol_Click(object sender, EventArgs e)
         {
-            FrmFutbol frmFutbol = new FrmFutbol(this.tabla, this.usuario);
+            FrmFutbol frmFutbol = new FrmFutbol(this.tabla);
             AbrirFormularioHijo(frmFutbol);
         }
 
         private void btnBasquet_Click(object sender, EventArgs e)
         {
-            FrmBasquet frmBasquet = new FrmBasquet(this.tabla, this.usuario);
+            FrmBasquet frmBasquet = new FrmBasquet(this.tabla);
             AbrirFormularioHijo(frmBasquet);
         }
 

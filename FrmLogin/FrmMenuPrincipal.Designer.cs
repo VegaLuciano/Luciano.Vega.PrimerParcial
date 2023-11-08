@@ -37,7 +37,6 @@
             btnMostrarVoley = new Button();
             btnMostrarFutbol = new Button();
             btnMostrarBasquet = new Button();
-            pnlFormulario.SuspendLayout();
             SuspendLayout();
             // 
             // btnAgregar
@@ -69,9 +68,6 @@
             // pnlFormulario
             // 
             pnlFormulario.BackColor = Color.SteelBlue;
-            pnlFormulario.Controls.Add(btnBasquet);
-            pnlFormulario.Controls.Add(btnFutbol);
-            pnlFormulario.Controls.Add(btnVoley);
             pnlFormulario.Location = new Point(158, 12);
             pnlFormulario.Name = "pnlFormulario";
             pnlFormulario.Size = new Size(896, 472);
@@ -84,7 +80,7 @@
             btnBasquet.FlatAppearance.BorderColor = Color.DarkSlateBlue;
             btnBasquet.FlatStyle = FlatStyle.Flat;
             btnBasquet.ForeColor = SystemColors.ActiveCaptionText;
-            btnBasquet.Location = new Point(22, 54);
+            btnBasquet.Location = new Point(12, 158);
             btnBasquet.Name = "btnBasquet";
             btnBasquet.Size = new Size(140, 32);
             btnBasquet.TabIndex = 5;
@@ -98,7 +94,7 @@
             btnFutbol.FlatAppearance.BorderColor = Color.DarkSlateBlue;
             btnFutbol.FlatStyle = FlatStyle.Flat;
             btnFutbol.ForeColor = SystemColors.ActiveCaptionText;
-            btnFutbol.Location = new Point(22, 4);
+            btnFutbol.Location = new Point(12, 120);
             btnFutbol.Name = "btnFutbol";
             btnFutbol.Size = new Size(140, 32);
             btnFutbol.TabIndex = 4;
@@ -114,7 +110,7 @@
             btnVoley.FlatStyle = FlatStyle.Flat;
             btnVoley.ForeColor = SystemColors.ActiveCaptionText;
             btnVoley.ImageAlign = ContentAlignment.BottomCenter;
-            btnVoley.Location = new Point(22, 108);
+            btnVoley.Location = new Point(12, 196);
             btnVoley.Name = "btnVoley";
             btnVoley.Size = new Size(140, 32);
             btnVoley.TabIndex = 3;
@@ -129,7 +125,7 @@
             btnMostrarVoley.FlatAppearance.BorderColor = SystemColors.ButtonFace;
             btnMostrarVoley.FlatStyle = FlatStyle.Flat;
             btnMostrarVoley.ForeColor = SystemColors.ActiveCaptionText;
-            btnMostrarVoley.Location = new Point(12, 123);
+            btnMostrarVoley.Location = new Point(12, 310);
             btnMostrarVoley.Name = "btnMostrarVoley";
             btnMostrarVoley.Size = new Size(140, 32);
             btnMostrarVoley.TabIndex = 3;
@@ -143,7 +139,7 @@
             btnMostrarFutbol.FlatAppearance.BorderColor = SystemColors.ButtonFace;
             btnMostrarFutbol.FlatStyle = FlatStyle.Flat;
             btnMostrarFutbol.ForeColor = SystemColors.ActiveCaptionText;
-            btnMostrarFutbol.Location = new Point(12, 161);
+            btnMostrarFutbol.Location = new Point(12, 272);
             btnMostrarFutbol.Name = "btnMostrarFutbol";
             btnMostrarFutbol.Size = new Size(140, 32);
             btnMostrarFutbol.TabIndex = 4;
@@ -157,7 +153,7 @@
             btnMostrarBasquet.FlatAppearance.BorderColor = SystemColors.ButtonFace;
             btnMostrarBasquet.FlatStyle = FlatStyle.Flat;
             btnMostrarBasquet.ForeColor = SystemColors.ActiveCaptionText;
-            btnMostrarBasquet.Location = new Point(12, 199);
+            btnMostrarBasquet.Location = new Point(12, 234);
             btnMostrarBasquet.Name = "btnMostrarBasquet";
             btnMostrarBasquet.Size = new Size(140, 32);
             btnMostrarBasquet.TabIndex = 5;
@@ -171,7 +167,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateBlue;
             ClientSize = new Size(1080, 513);
+            Controls.Add(btnVoley);
+            Controls.Add(btnBasquet);
             Controls.Add(btnMostrarBasquet);
+            Controls.Add(btnFutbol);
             Controls.Add(btnMostrarFutbol);
             Controls.Add(btnMostrarVoley);
             Controls.Add(pnlFormulario);
@@ -181,7 +180,6 @@
             Text = "FrmMenuPrincipal";
             FormClosing += FrmMenuPrincipal_FormClosing;
             Load += FrmMenuPrincipal_Load;
-            pnlFormulario.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }

@@ -15,21 +15,43 @@ namespace Forms
     {
         private Color colorCamisetaLocal;
         private Color colorCamisetaVisitante;
-        public FrmFutbol(Tabla listaEquipo, Usuario usuario) : base(listaEquipo, usuario)
+        private Futbol equipoModificar;
+
+        public FrmFutbol(Tabla listaEquipo) : base(listaEquipo)
         {
             InitializeComponent();
+            this.equipoModificar = new Futbol();
+        }
 
+        public FrmFutbol(Tabla listaEquipo, Futbol equipo) : this(listaEquipo) 
+        {
+            this.seModifica = true;
+            this.equipoModificar = equipo;  
+        } 
+
+        protected override void SetearFormModificar()
+        {
+            this.txtNombre.Text = this.equipoModificar.Nombre;
+            this.txtNombreEntrenador.Text = this.equipoModificar.Entrenador;
+            this.cmbDivision.SelectedItem = this.equipoModificar.Division;
+            this.npdCantJugadores.Value = this.equipoModificar.Jugadores.Count;
+            this.npdCantSuplentes.Value = this.equipoModificar.CantSuplentes;
+            this.npdCantTitulares.Value = this.equipoModificar.CantTitulares;
+            this.btnCamisetaLocal.BackColor= this.equipoModificar.ColorCamiseteLocal;
+            this.btnVisitante.BackColor = this.equipoModificar.ColorCamisetaVisitante;
+            this.listJugadores = equipoModificar.Jugadores;
         }
 
         private void btnContinuar_Click_1(object sender, EventArgs e)
         {
+            Color defaultBackColor = Color.FromKnownColor(KnownColor.Control);
+
             if (base.FuncionContinuar())
             {
-
-                if (this.colorLocal.Color != Color.Empty)
+                if (this.colorLocal.Color != defaultBackColor )
                 {
 
-                    if (this.colorVisitante.Color != Color.Empty)
+                    if (this.colorVisitante.Color != defaultBackColor)
                     {
 
                         Futbol EquipoFutbol = new Futbol(this.txtNombre.Text, (int)this.npdCantTitulares.Value, base.SetearCampoDivision(), this.txtNombreEntrenador.Text,
@@ -79,7 +101,8 @@ namespace Forms
 
         private void FrmFutbol_Load(object sender, EventArgs e)
         {
-
+            if (seModifica)
+                this.SetearFormModificar();
         }
     }
 }

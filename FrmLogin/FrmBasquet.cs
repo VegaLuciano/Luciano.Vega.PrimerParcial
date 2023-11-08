@@ -14,15 +14,36 @@ namespace Forms
 {
     public partial class FrmBasquet : FrmCRUD1
     {
-        public FrmBasquet(Tabla tabla, Usuario usuario) : base(tabla, usuario)
+        Basquet equipoModificar;
+        public FrmBasquet(Tabla tabla) : base(tabla)
         {
             InitializeComponent();
-
+            this.equipoModificar = new Basquet();
+        }
+        public FrmBasquet(Tabla listaEquipo, Basquet equipo) : this(listaEquipo)
+        {
+            this.seModifica = true;
+            this.equipoModificar = equipo;
         }
 
+        protected override void SetearFormModificar()
+        {
+            this.txtNombre.Text = this.equipoModificar.Nombre;
+            this.txtNombreEntrenador.Text = this.equipoModificar.Entrenador;
+            this.cmbDivision.SelectedItem = this.equipoModificar.Division;
+            this.npdCantJugadores.Value = this.equipoModificar.Jugadores.Count;
+            this.npdCantSuplentes.Value = this.equipoModificar.CantSuplentes;
+            this.npdCantTitulares.Value = this.equipoModificar.CantTitulares;
+            this.txtSponsor.Text = this.equipoModificar.Sponsor;
+            if (this.equipoModificar.EquipoMedico)
+                this.RdbSi.Checked = true;
+            else
+                this.RdbSi.Checked = false;
+        }
         private void FrmBasquet_Load(object sender, EventArgs e)
         {
-
+            if(seModifica)
+                this.SetearFormModificar();
         }
 
         private void btnContinuar_Click_1(object sender, EventArgs e)

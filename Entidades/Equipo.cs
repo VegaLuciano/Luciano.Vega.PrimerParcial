@@ -4,8 +4,8 @@ namespace Entidades
 {
     public abstract class Equipo
     {
-        protected EDeporte deporte;
         protected string nombre;
+        protected EDeporte deporte;
         protected int cantTitulares;
         protected int cantSuplentes;
         protected EDivisiones division;
@@ -41,8 +41,8 @@ namespace Entidades
         }
 
         public abstract List<Jugador> Jugadores { get; set;}
-        public EDeporte Deporte { get => deporte; }
         public string Nombre { get => nombre; set => nombre = value; }
+        public EDeporte Deporte { get => deporte; }   
         public int CantTitulares { get => cantTitulares; set => cantTitulares = value; }
         public int CantSuplentes { get => cantSuplentes; set => cantSuplentes = value; }
         public EDivisiones Division { get => division; set => division = value; }

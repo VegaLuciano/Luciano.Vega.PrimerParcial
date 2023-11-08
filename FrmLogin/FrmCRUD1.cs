@@ -15,22 +15,23 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Forms
 {
-    public partial class FrmCRUD1 : Form
+    public abstract partial class FrmCRUD1 : Form
     {
         public Tabla? tabla;
-        public Usuario? usuario;
         public List<Jugador>? listJugadores;
+        protected bool seModifica;
+        
         public FrmCRUD1()
         {
             this.tabla = new Tabla();
             this.listJugadores = new List<Jugador>();
             InitializeComponent();
         }
+ 
 
-        public FrmCRUD1(Tabla tabla, Usuario usuario) : this()
+        public FrmCRUD1(Tabla tabla) : this()
         {
             this.tabla = tabla;
-            this.usuario = usuario;
         }
 
         protected void FrmCRUD_Load(object sender, EventArgs e)
@@ -144,6 +145,7 @@ namespace Forms
             }
         }
 
+        protected abstract void SetearFormModificar();
         public bool FuncionContinuar()
         {
             bool allOk = true;
@@ -222,6 +224,8 @@ namespace Forms
 
             return retorno;
         }
+
+        
     }
 
 }

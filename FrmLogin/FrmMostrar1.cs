@@ -17,7 +17,7 @@ namespace Forms
     {
         private Tabla tabla;
         private EDeporte deporteSeleccionado;
-        private Equipo? equipoSeleccionado;
+        private Equipo equipoSeleccionado;
 
         public FrmMostrar1()
         {
@@ -126,6 +126,24 @@ namespace Forms
             this.ActualizarDataGridView();
         }
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            switch (this.deporteSeleccionado)
+            {
+                case EDeporte.Futbol:
+                    FrmFutbol frmFutbol = new FrmFutbol(this.tabla, (Futbol)this.equipoSeleccionado);
+                    frmFutbol.ShowDialog();
+                    break;
+                case EDeporte.Voley:
+                    FrmVoley frmVoley = new FrmVoley(this.tabla, (Voley)this.equipoSeleccionado); 
+                    frmVoley.ShowDialog();
+                    break;
+                case EDeporte.Basquet:
+                    FrmBasquet frmBasquet = new FrmBasquet(this.tabla, (Basquet)this.equipoSeleccionado);
+                    frmBasquet.ShowDialog();
+                    break;
+            };
+        }
     }
 
 }
